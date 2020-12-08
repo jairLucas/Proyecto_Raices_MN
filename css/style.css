@@ -1,10 +1,3 @@
-/*
-  Theme Name: NewBiz
-  Theme URL: https://bootstrapmade.com/newbiz-bootstrap-business-template/
-  Author: BootstrapMade.com
-  License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -141,29 +134,29 @@ h6 {
 }
 
 #header .logo h1 {
-  font-size: 36px;
+  font-size: 40px;
   margin: 0;
   padding: 0;
   line-height: 1;
-  font-weight: 400;
-  letter-spacing: 3px;
+  font-weight: 600;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 #header .logo h1 a,
 #header .logo h1 a:hover {
-  color: #00366f;
+  color: #166f00;
   text-decoration: none;
 }
 
 #header .logo img {
   padding: 0;
-  margin: 7px 0;
-  max-height: 26px;
+  margin: 0px 20px 0px 0px;
+  max-height: 40px;
 }
 
 .main-pages {
-  margin-top: 60px;
+  margin-top: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -173,26 +166,26 @@ h6 {
 #intro {
   width: 100%;
   position: relative;
-  background: url("../img/intro-bg.png") center bottom no-repeat;
+  background: url("../img/intro/intro-bg.png") center bottom no-repeat;
   background-size: cover;
-  padding: 200px 0 120px 0;
+  padding: 120px 0 60px 0;
 }
 
 #intro .intro-img {
-  width: 50%;
+  width: 40%;
   float: right;
 }
 
 #intro .intro-info {
-  width: 50%;
+  width: 60%;
   float: left;
 }
 
 #intro .intro-info h2 {
   color: #fff;
-  margin-bottom: 40px;
-  font-size: 48px;
-  font-weight: 700;
+  margin-bottom: 35px;
+  font-size: 50px;
+  font-weight: 500;
 }
 
 #intro .intro-info h2 span {
@@ -203,7 +196,7 @@ h6 {
 #intro .intro-info .btn-get-started,
 #intro .intro-info .btn-services {
   font-family: "Montserrat", sans-serif;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 1px;
   display: inline-block;
@@ -266,7 +259,7 @@ h6 {
   color: #004289;
   padding: 10px 15px;
   transition: 0.3s;
-  font-size: 14px;
+  font-size: 20px;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
 }

@@ -8,8 +8,8 @@
   <meta content="" name="description">
 
   <!-- Favicons -->
-  <link href="img/raices2.png" rel="icon">
-  <link href="img/raices2.png" rel="apple-touch-icon">
+  <link href="img/icon/grafico.svg" rel="icon">
+  <link href="img/icon/grafico.svg" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
@@ -36,14 +36,13 @@
   ============================-->
   <header id="header" class="fixed-top">
     <div class="container">
-
       <div class="logo float-left">
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <h1 class="text-light"><a href="#header"><span>NewBiz</span></a></h1> -->
-        <h1>Metodos Numericos</h1>
-        <!--<a href="#intro" class="scrollto"><img src="img/Raices2.png" alt="" class="img-fluid"></a>-->
+        <a href="#intro" class="scrollto"><img src="img/icon/grafico.svg" alt="" class="img-fluid"></a>
+        <!--<h1>Métodos Numéricos</h1>--> 
       </div>
-
+      <div class="logo float-left">
+        <h1>Métodos Numéricos</h1>
+      </div>
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
           <li class="active"><a href="#intro">Inicio</a></li>
@@ -61,15 +60,20 @@
   ============================-->
   <section id="intro" class="clearfix">
     <div class="container">
-
       <div class="intro-img">
-        <img src="img/intro-img.svg" alt="" class="img-fluid">
+        <img src="img/intro/bisection_method.png" alt="" class="img-fluid">
       </div>
-
       <div class="intro-info">
-        <h2>Aprendamos el Metodo de <br><span>Biseccion</span><br></h2>
-      </div>
-
+        <div class="container h-100">
+        <div class="row justify-content-center h-100">
+            <div class="col-sm-6 text-center">
+              </div>
+                <h2>Aprendiendo el Método de <span>Biseccion</span></h2>    
+                <img src="img/intro/conferencia.svg" alt="" class="img-fluid">
+                
+              </div>
+            </div>
+        </div>
     </div>
   </section><!-- #intro -->
 
@@ -82,77 +86,81 @@
       <div class="container">
 
         <header class="section-header">
-          <h3>Teoria</h3>
-          <p>teoria</p>
+          <h3>Método de Bisección</h3>
+          <p> 
+            El método de bisección, conocido también como de corte binario, de partición de
+            intervalos o de Bolzano, es un tipo de búsqueda incremental en el que el intervalo se
+            divide siempre a la mitad.
+          </p>
         </header>
 
         <div class="row about-container">
 
           <div class="col-lg-6 content order-lg-1 order-2">
-            <p>
-              parrafo
-            </p>
+            
 
             <div class="icon-box wow fadeInUp">
-              <div class="icon"><i class="fa fa-shopping-bag"></i></div>
-              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+              <div class="icon"><img src="img/icon/documento.svg" alt="" class="img-fluid"></div>
+              <h4 class="title"><a href="#glosario">Glosario</a></h4>
+              <p class="description">Encuentra el significado de las palabras desconocidas que se usan generalmente en este tema</p>
             </div>
 
             <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
-              <div class="icon"><i class="fa fa-photo"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              <div class="icon"><img src="img/icon/math.svg" alt="" class="img-fluid"></div>
+              <h4 class="title"><a href="#bisection">Entendiendo el metodo de Bisección</a></h4>
+              <p class="description">Desarrollemos a fondo la teoria del método de bisección, con los pasos que se deben seguir y algunos consejos practicos</p>
             </div>
 
             <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
-              <div class="icon"><i class="fa fa-bar-chart"></i></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+              <div class="icon"><img src="img/icon/calculador.svg" alt="" class="img-fluid"></div>
+              <h4 class="title"><a href="#services">Zona Practica</a></h4>
+              <p class="description">Destinado para todos aquellos que dominan la teoria y desean practicar con ejercicios</p>
             </div>
 
           </div>
-
+          
           <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
-            <img src="img/about-img.svg" class="img-fluid" alt="">
+            <img src="img/teoria/work_team.png" class="img-fluid" alt="">
           </div>
         </div>
 
-        <div class="row about-extra">
+        <div id="glosario" class="row about-extra">
           <div class="col-lg-6 wow fadeInUp">
-            <img src="img/about-extra-1.svg" class="img-fluid" alt="">
+            <img src="img/teoria/about-extra-1.svg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
-            <h4>h4</h4>
-            <p>
-              parrafo
-            </p>
+            <h4>Glosario</h4>
+                          
             <p>
               otro parrafo
             </p>
           </div>
         </div>
 
-        <div class="row about-extra">
+        <div id="bisection" class="row about-extra">
           <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
-            <img src="img/about-extra-2.svg" class="img-fluid" alt="">
+            <img src="img/teoria/about-extra-2.svg" class="img-fluid" alt="">
           </div>
 
           <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
-            <h4>Neque saepe temporibus repellat ea ipsum et. Id vel et quia tempora facere reprehenderit.</h4>
+            <h4>Desarrollo</h4>
             <p>
-             Delectus alias ut incidunt delectus nam placeat in consequatur. Sed cupiditate quia ea quis. Voluptas nemo qui aut distinctio. Cumque fugit earum est quam officiis numquam. Ducimus corporis autem at blanditiis beatae incidunt sunt.
-            </p>
-            <p>
-              Voluptas saepe natus quidem blanditiis. Non sunt impedit voluptas mollitia beatae. Qui esse molestias. Laudantium libero nisi vitae debitis. Dolorem cupiditate est perferendis iusto.
-            </p>
-            <p>
-              Eum quia in. Magni quas ipsum a. Quis ex voluptatem inventore sint quia modi. Numquam est aut fuga mollitia exercitationem nam accusantium provident quia.
-            </p>
+              <ul>
+              <li>
+                Si la función cambia de signo sobre un intervalo, se evalúa el
+                valor de la función en el punto medio
+              </li>
+              <li>
+                La posición de la raíz se determina situándola en
+                el punto medio del subintervalo dentro del cual ocurre un cambio de signo
+              </li>
+              <li>
+                El proceso se repite hasta obtener una mejor aproximación
+              </li>
+            </ul>
+            </p>       
           </div>
-
         </div>
-
       </div>
     </section><!-- #about -->
 
@@ -164,7 +172,7 @@
 
         <header class="section-header">
           <h3>Secciones</h3>
-          <p>Con nuestras secciones podras interactuar con lo aprendido de diferentes maneras para que el aprendizaje sea efectivo</p>
+          <p>En nuestras secciones podras interactuar con lo aprendido de diferentes maneras para que el aprendizaje sea efectivo</p>
         </header>
 
         <div class="row">
@@ -203,71 +211,59 @@
     </section><!-- #services -->
 
     <!--==========================
-      Clients Section
+      Testimonial Section
     ============================-->
     <section id="testimonials" class="section-bg">
       <div class="container">
-
         <header class="section-header">
           <h3>Experiencias</h3>
         </header>
-
         <div class="row justify-content-center">
           <div class="col-lg-8">
-
             <div class="owl-carousel testimonials-carousel wow fadeInUp">
-
               <div class="testimonial-item">
-                <img src="img/testimonial-1.jpg" class="testimonial-img" alt="">
+                <img src="img/testimonial/testimonio_varon.svg" class="testimonial-img" alt="">
                 <h3>Saul Goodman</h3>
                 <h4>Ceo &amp; Founder</h4>
                 <p>
                   Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
                 </p>
               </div>
-
               <div class="testimonial-item">
-                <img src="img/testimonial-2.jpg" class="testimonial-img" alt="">
+                <img src="img/testimonial/testimonio_mujer.svg" class="testimonial-img" alt="">
                 <h3>Sara Wilsson</h3>
                 <h4>Designer</h4>
                 <p>
                   Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
                 </p>
               </div>
-
               <div class="testimonial-item">
-                <img src="img/testimonial-3.jpg" class="testimonial-img" alt="">
+                <img src="img/testimonial/testimonio_mujer.svg" class="testimonial-img" alt="">
                 <h3>Jena Karlis</h3>
                 <h4>Store Owner</h4>
                 <p>
                   Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
                 </p>
               </div>
-
               <div class="testimonial-item">
-                <img src="img/testimonial-4.jpg" class="testimonial-img" alt="">
+                <img src="img/testimonial/testimonio_varon.svg" class="testimonial-img" alt="">
                 <h3>Matt Brandon</h3>
                 <h4>Freelancer</h4>
                 <p>
                   Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
                 </p>
               </div>
-
               <div class="testimonial-item">
-                <img src="img/testimonial-5.jpg" class="testimonial-img" alt="">
+                <img src="img/testimonial/testimonio_varon.svg" class="testimonial-img" alt="">
                 <h3>John Larson</h3>
                 <h4>Entrepreneur</h4>
                 <p>
                   Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
                 </p>
               </div>
-
             </div>
-
           </div>
         </div>
-
-
       </div>
     </section><!-- #testimonials -->
 
@@ -278,14 +274,14 @@
       <div class="container">
         <div class="section-header">
           <h3>Nuestro Equipo</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <p>Información</p>
         </div>
 
-        <div class="row">
+        <div class="row justify-content-center h-100">
 
-          <div class="col-lg-3 col-md-6 wow fadeInUp">
+          <div class="col-lg-2 col-md-6 wow fadeInUp">
             <div class="member">
-              <img src="img/team-1.jpg" class="img-fluid" alt="">
+              <img src="img/team/perfil_team.svg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
                   <h4>Walter White</h4>
@@ -301,9 +297,9 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
             <div class="member">
-              <img src="img/team-2.jpg" class="img-fluid" alt="">
+              <img src="img/team/perfil_team.svg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
                   <h4>Sarah Jhonson</h4>
@@ -319,9 +315,9 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+          <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
             <div class="member">
-              <img src="img/team-3.jpg" class="img-fluid" alt="">
+              <img src="img/team/perfil_team.svg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
                   <h4>William Anderson</h4>
@@ -337,9 +333,27 @@
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+          <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
             <div class="member">
-              <img src="img/team-4.jpg" class="img-fluid" alt="">
+              <img src="img/team/perfil_team.svg" class="img-fluid" alt="">
+              <div class="member-info">
+                <div class="member-info-content">
+                  <h4>Amanda Jepson</h4>
+                  <span>Accountant</span>
+                  <div class="social">
+                    <a href=""><i class="fa fa-twitter"></i></a>
+                    <a href=""><i class="fa fa-facebook"></i></a>
+                    <a href=""><i class="fa fa-google-plus"></i></a>
+                    <a href=""><i class="fa fa-linkedin"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+            <div class="member">
+              <img src="img/team/perfil_team.svg" class="img-fluid" alt="">
               <div class="member-info">
                 <div class="member-info-content">
                   <h4>Amanda Jepson</h4>
