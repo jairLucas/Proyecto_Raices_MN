@@ -634,8 +634,8 @@ function JSgCalc(jsgui, element) {
             delta = event.originalEvent.detail;
             event = undefined;
         }
-        if (delta > 0) this.zoom(this.zoomFactor, event);
-        else this.zoom(-this.zoomFactor, event);
+        if (delta > 0) this.zoom(-this.zoomFactor, event);
+        else this.zoom(this.zoomFactor, event);
     };
 
     this.setWindow = function (x1, x2, y1, y2) {
