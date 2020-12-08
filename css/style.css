@@ -56,6 +56,9 @@ h6 {
   transition: background 0.5s;
   z-index: 11;
 }
+section{
+  padding-top: 100px;
+}
 
 .back-to-top i {
   padding-top: 12px;
