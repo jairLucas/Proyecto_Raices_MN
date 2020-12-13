@@ -14,17 +14,16 @@ const precisionFnBuilder = (n) => {
 // number -> number
 const funcionPolinomial = (x) => x ** 3 - x - 2;
 
-// TODO
-// number number (number number number number -> ()) -> number
+// (number -> number) number number (number, number number number number -> ()) -> number
 const biseccion = (funcion, a, b, precision, callback) => {
     let [na, nb] = [a, b];
     const validarPrecision = precisionFnBuilder(precision);
+    let iter = 1;
     while (true) {
         const puntoMedio = (na + nb) / 2;
         const puntoMedioEvaluado = funcion(puntoMedio);
 
-
-        callback(na, nb, puntoMedio, puntoMedioEvaluado);
+        callback(iter, na, nb, puntoMedio, puntoMedioEvaluado);
         if (validarPrecision(puntoMedioEvaluado)) {
             return puntoMedio;
         }
@@ -34,6 +33,7 @@ const biseccion = (funcion, a, b, precision, callback) => {
         } else {
             nb = puntoMedio;
         }
+        iter++;
     }
 };
 

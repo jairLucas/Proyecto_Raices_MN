@@ -37,6 +37,7 @@
     <script type="text/javascript" src="https://laktak.github.io/js-graphy/jquery.splitter.js"></script>
     <!-- https://github.com/silentmatt/expr-eval -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/expr-eval/2.0.2/bundle.min.js"></script>
+    <script src="js/biseccion.js"></script>
 
     <!-- Estilos para biseccion -->
     <style>
@@ -46,7 +47,8 @@
 
         #contenedor {
             display: grid;
-            grid-template-columns: 5% 45% 45% 5%;
+            grid-template-columns: 1% 55% 40% 2%;
+            grid-column-gap: 1%;
         }
 
         .grafica {
@@ -56,6 +58,31 @@
         #wrapper {
             min-height: 80vh;
         }
+
+        .cont-entrada {
+            display: grid;
+            grid-template-columns: 13rem auto;
+            grid-column-gap: 1rem;
+        }
+
+        .entrada {
+            border-right: solid 1px black;
+        }
+
+        .entrada input {
+            max-width: 12rem;
+        }
+
+        #contenedor-tabla-resultados {
+            overflow: scroll;
+            font-size: 0.9rem;
+            max-height: 70vh;
+        }
+
+        #tabla-resultados thead {
+            font-weight: bold;
+        }
+
     </style>
 </head>
 
@@ -105,15 +132,58 @@ Header
             <div id="contenedor">
                 <div></div>
                 <div class="contenido">
-                    <h1>Metodos numericos</h1>
-                    <h2>Metodo de biseccion</h2>
-                    <p>Metodo de biseccion</p>
+                    <h1>Método de bisección</h1>
+                    <br>
+                    <p>
+                        Con esta calculadora puedes verificar tus respuestas
+                        de un problema del método de bisección.
+                    </p>
 
-                    <label for="entrada-usuario">Funcion:</label>
-                    <br>
-                    <input id="entrada-usuario"/>
-                    <br>
-                    <button id="boton-graficar">Calcular</button>
+                    <div class="cont-entrada">
+                        <div class="entrada">
+                            <label for="entrada-usuario">Función:</label>
+                            <br>
+                            <input id="entrada-usuario" placeholder="x^2 * 2*x"/>
+                            <br>
+                            <span id="texto-error" style="color: red; opacity: 0;">Esta función es invalida.</span>
+                            <br>
+
+                            <label for="int-minimo">Punto inferior:</label>
+                            <br>
+                            <input type="number" id="int-minimo" placeholder="0">
+                            <br>
+                            <br>
+
+                            <label for="int-maximo">Punto superior:</label>
+                            <br>
+                            <input type="number" id="int-maximo" placeholder="1">
+                            <br>
+                            <br>
+
+                            <label for="precision">Decimales de error:</label>
+                            <br>
+                            <input type="number" id="precision" placeholder="6" min="1" max="15" step="1">
+                            <br>
+                            <br>
+
+                            <button id="boton-graficar">Calcular</button>
+                        </div>
+                        <div id="contenedor-tabla-resultados">
+                            <table id="tabla-resultados" class="table" border="1">
+                                <thead class="table-dark">
+                                <tr>
+                                    <td>i</td>
+                                    <td>a</td>
+                                    <td>b</td>
+                                    <td>raíz</td>
+                                    <td>error</td>
+                                </tr>
+                                </thead>
+                                <tbody id="cont-tabla">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="grafica">
@@ -164,8 +234,34 @@ Header
 <script>
     const parser = new exprEval.Parser();
 
+    const tabla = document.getElementById("tabla-resultados");
+    const tbody = document.getElementById("cont-tabla");
+
+    const limpiarTabla = () => {
+        while (tbody.firstChild) {
+            tbody.removeChild(tbody.firstChild);
+        }
+    };
+
+    const insertarResultados = (...data) => {
+        const tr = document.createElement("tr");
+
+
+
+        for (const elem of data) {
+            const td = document.createElement("td");
+            td.innerText = elem;
+            tr.appendChild(td);
+        }
+
+        tbody.appendChild(tr);
+    };
+
     const graficar = () => {
         const entrada = document.getElementById("entrada-usuario").value;
+        const puntoInf = parseFloat(document.getElementById("int-minimo").value);
+        const puntoSup = parseFloat(document.getElementById("int-maximo").value);
+        const precision = parseInt(document.getElementById("precision").value);
 
         const expr = parser.parse(entrada);
         const funEval = x => expr.evaluate({x});
@@ -173,11 +269,30 @@ Header
         graph.reset();
         graph.add(funEval);
 
+        document.getElementById("texto-error").style.opacity = "0";
 
-        // TODO: Obtener el intervalo y precision del usuario
-        // biseccion(funEval, );
+        limpiarTabla();
+        biseccion(funEval, puntoInf, puntoSup, precision, insertarResultados)
     };
 
+    const preGraficar = (ev) => {
+        try {
+            const entrada = ev.target.value;
+
+            const expr = parser.parse(entrada);
+            const funEval = x => expr.evaluate({x});
+
+            graph.reset();
+            graph.add(funEval);
+
+            document.getElementById("texto-error").style.opacity = "0";
+        } catch (e) {
+            console.error(e);
+            document.getElementById("texto-error").style.opacity = "1";
+        }
+    };
+
+    document.getElementById("entrada-usuario").addEventListener("focusout", preGraficar);
     document.getElementById("boton-graficar").addEventListener("click", graficar);
 
 </script>
