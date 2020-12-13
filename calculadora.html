@@ -76,7 +76,7 @@
         #contenedor-tabla-resultados {
             overflow: scroll;
             font-size: 0.9rem;
-            max-height: 70vh;
+            max-height: 80vh;
         }
 
         #tabla-resultados thead {
@@ -132,13 +132,6 @@ Header
             <div id="contenedor">
                 <div></div>
                 <div class="contenido">
-                    <h1>Método de bisección</h1>
-                    <br>
-                    <p>
-                        Con esta calculadora puedes verificar tus respuestas
-                        de un problema del método de bisección.
-                    </p>
-
                     <div class="cont-entrada">
                         <div class="entrada">
                             <label for="entrada-usuario">Función:</label>
@@ -169,7 +162,7 @@ Header
                             <button id="boton-graficar">Calcular</button>
                         </div>
                         <div id="contenedor-tabla-resultados">
-                            <table id="tabla-resultados" class="table" border="1">
+                            <table id="tabla-resultados" class="table table-striped" border="1">
                                 <thead class="table-dark">
                                 <tr>
                                     <td>i</td>
@@ -245,8 +238,6 @@ Header
 
     const insertarResultados = (...data) => {
         const tr = document.createElement("tr");
-
-
 
         for (const elem of data) {
             const td = document.createElement("td");

@@ -2,6 +2,10 @@
  * Metodo numerico: Biseccion
  */
 
+const esperar = ms => new Promise(resolve => {
+    setTimeout(resolve, ms);
+});
+
 // number -> number -> boolean
 const precisionFnBuilder = (n) => {
     if (n < 1) throw new Error("La precisión debe ser mayor o igual a 1.");
@@ -11,11 +15,8 @@ const precisionFnBuilder = (n) => {
     return (x) => Math.abs(x) < valor;
 };
 
-// number -> number
-const funcionPolinomial = (x) => x ** 3 - x - 2;
-
 // (number -> number) number number (number, number number number number -> ()) -> number
-const biseccion = (funcion, a, b, precision, callback) => {
+const biseccion = async (funcion, a, b, precision, callback) => {
     let [na, nb] = [a, b];
     const validarPrecision = precisionFnBuilder(precision);
     let iter = 1;
@@ -23,7 +24,7 @@ const biseccion = (funcion, a, b, precision, callback) => {
         const puntoMedio = (na + nb) / 2;
         const puntoMedioEvaluado = funcion(puntoMedio);
 
-        callback(iter, na, nb, puntoMedio, puntoMedioEvaluado);
+        callback(iter, na, nb, puntoMedio, Math.abs(puntoMedioEvaluado));
         if (validarPrecision(puntoMedioEvaluado)) {
             return puntoMedio;
         }
@@ -34,6 +35,8 @@ const biseccion = (funcion, a, b, precision, callback) => {
             nb = puntoMedio;
         }
         iter++;
+
+        await esperar(500);
     }
 };
 
