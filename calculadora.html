@@ -28,65 +28,35 @@
     <!-- CSS principal -->
     <link href="css/style.css" rel="stylesheet">
 
-    <!-- JS para biseccion -->
+
     <script type="text/javascript" src="https://laktak.github.io/js-graphy/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://laktak.github.io/js-graphy/graphy.css" />
+    <link rel="stylesheet" type="text/css" href="https://laktak.github.io/js-graphy/graphy.css"/>
+    <script type="text/javascript" src="https://laktak.github.io/js-graphy/jquery.splitter.js"></script>
+    <!-- JS para graficar --
     <script type="text/javascript" src="js/calc.js"></script>
     <script type="text/javascript" src="js/jsgcalc.js"></script>
     <script type="text/javascript" src="js/graphy.js"></script>
-    <script type="text/javascript" src="https://laktak.github.io/js-graphy/jquery.splitter.js"></script>
-    <!-- https://github.com/silentmatt/expr-eval -->
+    -->
+    <!--
+     Parsear entrada del usuario a una funcion
+     https://github.com/silentmatt/expr-eval
+    -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/expr-eval/2.0.2/bundle.min.js"></script>
+
     <script src="js/biseccion.js"></script>
 
+    <!-- Vuejs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.2/vue.global.prod.js"
+            integrity="sha512-M8VjsuCj1iBzrwKloFNjvQBmFXT2oF0MWExoLGpQT2nEx5tq7CP+BhWGJdczT1LoWAhyqHh+LJ6ihHSVGyclHw=="
+            crossorigin="anonymous"></script>
+
     <!-- Estilos para biseccion -->
-    <style>
-        body {
-            font-size: 20px;
-        }
+    <link rel="stylesheet" href="css/calculadora.css">
 
-        #contenedor {
-            display: grid;
-            grid-template-columns: 1% 55% 40% 2%;
-            grid-column-gap: 1%;
-        }
 
-        .grafica {
-            border: solid 2px black
-        }
-
-        #wrapper {
-            min-height: 80vh;
-        }
-
-        .cont-entrada {
-            display: grid;
-            grid-template-columns: 13rem auto;
-            grid-column-gap: 1rem;
-        }
-
-        .entrada {
-            border-right: solid 1px black;
-        }
-
-        .entrada input {
-            max-width: 12rem;
-        }
-
-        #contenedor-tabla-resultados {
-            overflow: scroll;
-            font-size: 0.9rem;
-            max-height: 80vh;
-        }
-
-        #tabla-resultados thead {
-            font-weight: bold;
-        }
-
-    </style>
 </head>
 
-<body>
+<body style="overflow: visible !important;">
 
 <!--==========================
 Header
@@ -112,88 +82,10 @@ Header
     </div>
 </header><!-- #header -->
 
-<div style="height: 30px">.</div>
+<div style="height: 100px">.</div>
 
-<main id="main">
-
-    <!--==========================
-      About Us Section
-    ============================-->
-    <section id="about">
-        <div class="container">
-
-            <header class="section-header">
-                <h3>Calculadora del Método de Bisección</h3>
-            </header>
-
-        </div>
-
-        <div class="calculadora-contenedor">
-            <div id="contenedor">
-                <div></div>
-                <div class="contenido">
-                    <div class="cont-entrada">
-                        <div class="entrada">
-                            <label for="entrada-usuario">Función:</label>
-                            <br>
-                            <input id="entrada-usuario" placeholder="x^2 * 2*x"/>
-                            <br>
-                            <span id="texto-error" style="color: red; opacity: 0;">Esta función es invalida.</span>
-                            <br>
-
-                            <label for="int-minimo">Punto inferior:</label>
-                            <br>
-                            <input type="number" id="int-minimo" placeholder="0">
-                            <br>
-                            <br>
-
-                            <label for="int-maximo">Punto superior:</label>
-                            <br>
-                            <input type="number" id="int-maximo" placeholder="1">
-                            <br>
-                            <br>
-
-                            <label for="precision">Decimales de error:</label>
-                            <br>
-                            <input type="number" id="precision" placeholder="6" min="1" max="15" step="1">
-                            <br>
-                            <br>
-
-                            <button id="boton-graficar">Calcular</button>
-                        </div>
-                        <div id="contenedor-tabla-resultados">
-                            <table id="tabla-resultados" class="table table-striped" border="1">
-                                <thead class="table-dark">
-                                <tr>
-                                    <td>i</td>
-                                    <td>a</td>
-                                    <td>b</td>
-                                    <td>raíz</td>
-                                    <td>error</td>
-                                </tr>
-                                </thead>
-                                <tbody id="cont-tabla">
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="grafica">
-                    <div id="vsplitter">
-                        <div id="wrapper">
-                            <div id="graph_wrapper">
-                                <canvas id="graph"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div></div>
-            </div>
-        </div>
-    </section><!-- #about -->
-
-</main>
+<div id="app" style="min-height: 75vh;">
+</div>
 
 <!--==========================
   Footer
@@ -223,7 +115,33 @@ Header
 <!-- ir hacia arriba de nuevo -->
 <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-<!-- Inicializar el grafico y ejecutar el metodo de biseccion -->
+<!-- Inicializar Vue -->
+<script>
+    const app = Vue.createApp({
+        template: `
+            <div class="contenedor-menu-seleccion">
+                <menu-seleccion />
+            </div>
+        `,
+        setup() {
+            const metodoActual = Vue.ref("");
+
+            return {
+                metodoActual
+            };
+        }
+    });
+</script>
+
+<!-- Componentes de Vue -->
+<script src="vue/biseccion.js"></script>
+<script src="vue/index.js"></script>
+
+<script>
+    app.mount("#app");
+</script>
+
+<!-- Inicializar el grafico y ejecutar el metodo de biseccion --
 <script>
     const parser = new exprEval.Parser();
 
@@ -287,6 +205,7 @@ Header
     document.getElementById("boton-graficar").addEventListener("click", graficar);
 
 </script>
+-->
 
 <!-- Libreria JavaScript --
 <script src="lib/jquery/jquery.min.js"></script>

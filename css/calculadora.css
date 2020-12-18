@@ -1,0 +1,47 @@
+body {
+    font-size: 20px;
+}
+
+#contenedor {
+    display: grid;
+    grid-template-columns: 1% 55% 40% 2%;
+    grid-column-gap: 1%;
+}
+
+.grafica {
+    border: solid 2px black
+}
+
+#wrapper {
+    min-height: 80vh;
+}
+
+.cont-entrada {
+    display: grid;
+    grid-template-columns: 13rem auto;
+    grid-column-gap: 1rem;
+}
+
+.entrada {
+    border-right: solid 1px black;
+}
+
+.entrada input {
+    max-width: 12rem;
+}
+
+#contenedor-tabla-resultados {
+    overflow: scroll;
+    font-size: 0.9rem;
+    max-height: 80vh;
+}
+
+#tabla-resultados thead {
+    font-weight: bold;
+}
+
+.contenedor-menu-seleccion {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
+}
