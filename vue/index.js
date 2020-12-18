@@ -41,6 +41,7 @@ app.component("menu-seleccion", {
         </div>
         <div v-else :style="{marginTop: '2rem'}">
             <metodo-biseccion v-if="metodoUsuario === 'biseccion'" :funcionUsuario="funcionParseada"/>
+            <metodo-falsa-posicion v-if="metodoUsuario === 'falsa-posicion'" :funcionUsuario="funcionParseada"/>
         </div>
 
         <!-- -->
