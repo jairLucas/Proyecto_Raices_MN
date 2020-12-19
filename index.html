@@ -37,7 +37,7 @@
   <header id="header" class="fixed-top">
     <div class="container">
       <div class="logo float-left">
-        <a href="#intro" class="scrollto"><img src="img/icon/grafico.svg" alt="" class="img-fluid"></a>
+        <!--<a href="#intro" class="scrollto"><img src="img/icon/grafico.svg" alt="" class="img-fluid"></a>-->
         <!--<h1>Métodos Numéricos</h1>-->
       </div>
       <div class="logo float-left">
@@ -45,7 +45,7 @@
       </div>
       <nav class="main-nav float-right d-none d-lg-block">
         <ul>
-          <li class="active"><a href="#intro">Inicio</a></li>
+          <li><a href="#intro">Inicio</a></li>
           <li><a href="#about">Teoría</a></li>
           <li><a href="#services">Secciones</a></li>
           <li><a href="#team">Nuestro Equipo</a></li>
@@ -66,11 +66,12 @@
       <div class="intro-info">
         <div class="container h-100">
         <div class="row justify-content-center h-100">
-            <div class="col-sm-6 text-center">
-              </div>
-                <h2>Aprendiendo el Método de <span>Biseccion</span></h2>
-                <img src="img/intro/conferencia.svg" alt="" class="img-fluid">
-
+            <div class="col-sm-12 text-center">
+              <div class="row justify-content-center h-100">
+                <div class="col-sm-12 text-center">
+                  <h2>Raices de Ecuaciones No Lineales</h2>
+                  <img src="img/intro/conferencia.svg" alt="" class="img-fluid">
+                </div>
               </div>
             </div>
         </div>
@@ -80,18 +81,31 @@
   <main id="main">
 
     <!--==========================
-      About Us Section
+      Teoria
     ============================-->
     <section id="about">
       <div class="container">
 
         <header class="section-header">
-          <h3>Método de Bisección</h3>
-          <p>
+          <h3><strong>Raices de Ecuaciones</strong></h3>
+          <h4><strong>INTRODUCCIÓN</strong></h4>
+          <!--<p>
             El método de bisección, conocido también como de corte binario, de partición de
             intervalos o de Bolzano, es un tipo de búsqueda incremental en el que el intervalo se
             divide siempre a la mitad.
-          </p>
+          </p>-->
+          <ul>
+            <li>
+            La determinación de las raíces de una ecuación es uno de los problemas más 
+            antiguos en matemáticas y se han realizado un gran número de esfuerzos en este 
+            sentido
+            </li>
+            <li>
+            Su importancia radica en que si podemos determinar las raíces de una ecuación 
+            también podemos determinar máximos y mínimos, valores propios de matrices,
+            resolver sistemas de ecuaciones lineales y diferenciales, etc... 
+            </li>
+          </ul>
         </header>
 
         <div class="row about-container">
@@ -101,14 +115,14 @@
 
             <div class="icon-box wow fadeInUp">
               <div class="icon"><img src="img/icon/documento.svg" alt="" class="img-fluid"></div>
-              <h4 class="title"><a href="#glosario">Glosario</a></h4>
+              <h4 class="title"><a href="./glosario.html">Glosario</a></h4>
               <p class="description">Encuentra el significado de las palabras desconocidas que se usan generalmente en este tema</p>
             </div>
 
             <div class="icon-box wow fadeInUp" data-wow-delay="0.2s">
               <div class="icon"><img src="img/icon/math.svg" alt="" class="img-fluid"></div>
-              <h4 class="title"><a href="#bisection">Entendiendo el metodo de Bisección</a></h4>
-              <p class="description">Desarrollemos a fondo la teoria del método de bisección, con los pasos que se deben seguir y algunos consejos practicos</p>
+              <h4 class="title"><a href="./general.html">Conociendo los diferentes Métodos</a></h4>
+              <p class="description">En esta sección conoceremos los diferentes tipos de metodos tantos abiertos y cerrados, conoceremos la diferencia que tienen y como es su aplicación</p>
             </div>
 
             <div class="icon-box wow fadeInUp" data-wow-delay="0.4s">
@@ -120,45 +134,7 @@
           </div>
 
           <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
-            <img src="img/teoria/work_team.png" class="img-fluid" alt="">
-          </div>
-        </div>
-
-        <div id="glosario" class="row about-extra">
-          <div class="col-lg-6 wow fadeInUp">
-            <img src="img/teoria/about-extra-1.svg" class="img-fluid" alt="">
-          </div>
-          <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
-            <h4>Glosario</h4>
-
-            <p>
-              otro parrafo
-            </p>
-          </div>
-        </div>
-
-        <div id="bisection" class="row about-extra">
-          <div class="col-lg-6 wow fadeInUp order-1 order-lg-2">
-            <img src="img/teoria/about-extra-2.svg" class="img-fluid" alt="">
-          </div>
-
-          <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
-            <h4>Desarrollo</h4>
-            <p>
-              <ul>
-              <li>
-                Si la función cambia de signo sobre un intervalo, se evalúa el
-                valor de la función en el punto medio
-              </li>
-              <li>
-                La posición de la raíz se determina situándola en
-                el punto medio del subintervalo dentro del cual ocurre un cambio de signo
-              </li>
-              <li>
-                El proceso se repite hasta obtener una mejor aproximación
-              </li>
-            </ul>
-            </p>
+            <img src="img/teoria/study.jpg" class="imgRedonda img-fluid" alt="">
           </div>
         </div>
       </div>
@@ -385,7 +361,7 @@
             <div class="col-sm-6 text-center">
               <div class="footer-info">
                 <h3>Metodos Numericos</h3>
-                <h4>Raices de ecuaciones - Metodos de Bisección</h4>
+                <h4>Raices de ecuaciones</h4>
                 <p>Este es un proyecto realizado para el curso de <strong>Métodos Numericos</strong> de la <strong>Universidad Nacional de San Agustin</strong> de Arequipa</p>
                 <div class="social-links">
                   <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
