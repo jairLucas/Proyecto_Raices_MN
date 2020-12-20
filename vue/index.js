@@ -99,6 +99,13 @@ app.component("menu-seleccion", {
 
         const solverObj = solver(funcionParseada, decimales);
 
+        // Actualizar los callbacks del solver para evitar errores
+        Vue.watch("metodoUsuario", () => {
+            solverObj.setCallbackExito(console.log);
+            solverObj.setCallbackStep(console.log);
+            solverObj.setCallbackError(console.error);
+        });
+
         return {
             metodoUsuario,
             funcionUsuario,

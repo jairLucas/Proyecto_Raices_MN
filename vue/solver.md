@@ -4,14 +4,6 @@
 
 Establece una interfaz para ejecutar varios métodos.
 
-```
-type params = {
-    funcionObjetivo: number -> number
-    precision: number
-    intervalo: number = 250
-}
-```
-
 `type funcion = Vue.ref '((number -> number) | null)`: La función a la cual aplicar el metodo
 
 `type precision = Vue.ref 'number`: La cantidad de decimales de error

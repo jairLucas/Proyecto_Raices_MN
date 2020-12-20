@@ -28,7 +28,7 @@ const falsaPosicion = async (params, a, b) => {
             return;
         }
 
-        if (iter >= 50) {
+        if (iter > 50) {
             callbackError("El método no converge tras 50 iteraciones.");
             return;
         }
@@ -81,22 +81,24 @@ app.component("metodo-falsa-posicion", {
         <div style="color: red">
             {{mensajeDeError}}
         </div>
-        <table class="table table-striped">
-            <thead class="table-dark">
-            <tr>
-                <th>i</th>
-                <th>a</th>
-                <th>b</th>
-                <th>raíz</th>
-                <th>error</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr v-for="arr in entradas">
-                <td v-for="v in arr">{{ v }}</td>
-            </tr>
-            </tbody>
-        </table>
+        <div :style="estilos['contenedor-tabla']">
+            <table class="table table-striped">
+                <thead class="table-dark">
+                <tr>
+                    <th>i</th>
+                    <th>a</th>
+                    <th>b</th>
+                    <th>raíz</th>
+                    <th>error</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr v-for="arr in entradas">
+                    <td v-for="v in arr">{{ v }}</td>
+                </tr>
+                </tbody>
+            </table>    
+        </div>
         <!-- -->
         </div>
     `,
@@ -112,6 +114,11 @@ app.component("metodo-falsa-posicion", {
                 display: "grid",
                 gridTemplateColumns: "13rem 8rem auto",
                 gridColumnGap: "1rem"
+            },
+            "contenedor-tabla": {
+                maxHeight: "80vh",
+                overflow: "auto",
+                border: "solid 2px gray"
             }
         };
         const valorMin = Vue.ref(null);
