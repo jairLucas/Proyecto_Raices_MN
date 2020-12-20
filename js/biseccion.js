@@ -27,6 +27,9 @@ const biseccion = async (funcion, a, b, precision, callback) => {
         callback(iter, na, nb, puntoMedio, Math.abs(puntoMedioEvaluado));
         if (validarPrecision(puntoMedioEvaluado)) {
             return puntoMedio;
+        } else if (na === nb) {
+            console.error("El método no converge.");
+            return;
         }
 
         if (puntoMedioEvaluado < 0) {

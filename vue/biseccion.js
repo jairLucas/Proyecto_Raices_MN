@@ -8,8 +8,6 @@ app.component("metodo-biseccion", {
             <label for="valor-max">Punto superior: </label>
             <input type="number" id="valor-max" v-model.number="valorMax" step="any">
             <span></span>
-            <label for="decimales-max">Decimales de error: </label>
-            <input type="number" id="decimales-max" v-model.number="decimales" min="1" max="6">
         </form>
         <br>
         <button @click="calcular">Calcular</button>
