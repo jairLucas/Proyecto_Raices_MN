@@ -10,7 +10,7 @@ const falsaPosicion = async (params, a, b) => {
     } = params;
 
     if (funcion === null) {
-        callbackError("");
+        callbackError("Error. La función ingresada es inválida.");
         return;
     }
 
@@ -81,6 +81,9 @@ app.component("metodo-falsa-posicion", {
         <div style="color: red">
             {{mensajeDeError}}
         </div>
+        <div v-if="valorRaiz !== null" style="color: #009688; font-weight: bold;">
+            Se encontró la raiz: {{valorRaiz}}
+        </div>
         <div :style="estilos['contenedor-tabla']">
             <table class="table table-striped">
                 <thead class="table-dark">
@@ -127,11 +130,13 @@ app.component("metodo-falsa-posicion", {
 
         const entradas = Vue.ref([]);
         const mensajeDeError = Vue.ref("");
+        const valorRaiz = Vue.ref(null);
 
         const limpiarValores = () => entradas.value = [];
 
         const calcular = () => {
             limpiarValores();
+            valorRaiz.value = null;
             mensajeDeError.value = "";
             props.solver.run(falsaPosicion, valorMin.value, valorMax.value);
         };
@@ -149,7 +154,8 @@ app.component("metodo-falsa-posicion", {
         };
 
         props.solver.setCallbackStep(callbackStep);
-        props.solver.setCallbackExito(e => mensajeDeError.value = e);
+        props.solver.setCallbackError(e => mensajeDeError.value = e);
+        props.solver.setCallbackExito(x => valorRaiz.value = x);
 
         return {
             estilos,
@@ -158,7 +164,8 @@ app.component("metodo-falsa-posicion", {
             decimales,
             calcular,
             entradas,
-            mensajeDeError
+            mensajeDeError,
+            valorRaiz
         }
     }
 });

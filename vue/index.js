@@ -20,9 +20,9 @@ const solver = (funcion, precision, intervalo = 250) => {
     const cancelarMetodoFn = () => cancelarMetodo.value = true;
 
     return {
-        setCallbackExito: f => callbackError = f,
+        setCallbackExito: f => callbackExito = f,
         setCallbackStep: f => callbackStep = f,
-        setCallbackError: f => callbackExito = f,
+        setCallbackError: f => callbackError = f,
         run: (metodo, ...params) => {
             cancelarMetodo.value = false;
             metodo({
@@ -51,6 +51,7 @@ app.component("menu-seleccion", {
                 <br>
                 <input v-model="funcionUsuario" type="text" id="entrada-funcion" placeholder="x^3 - 2*x + 5">
                 <br>
+                <br>
                 <label for="nombre-metodo">Selecciona el método:</label>
                 <br>
                 <select v-model="metodoUsuario" id="nombre-metodo">
@@ -63,6 +64,7 @@ app.component("menu-seleccion", {
                     <option value="newton-raphson">Newton Raphson</option>
                     <option value="secante">Secante</option>
                 </select>
+                <br>
                 <br>
                 <label for="decimales-max">Decimales de error: </label>
                 <br>
@@ -80,12 +82,11 @@ app.component("menu-seleccion", {
             </div>
         </div>
 
-        <div v-if="funcionParseada === null && metodoUsuario !== ''">
-            <p :style="{padding: '0.5rem 0', color: '#f44336'}">La función ingresada es incorrecta.</p>
-        </div>
-        <div v-else :style="{marginTop: '2rem'}">
+        <!-- Para hacer que el computed de Vue reaccione -->
+        <div style="display: none">{{funcionParseada}}</div>
+        <div :style="{marginTop: '2rem'}">
             <metodo-biseccion v-if="metodoUsuario === 'biseccion'" :funcionUsuario="funcionParseada"/>
-            <metodo-falsa-posicion v-if="metodoUsuario === 'falsa-posicion'" :solver="solverObj"/>
+            <metodo-falsa-posicion v-else-if="metodoUsuario === 'falsa-posicion'" :solver="solverObj"/>
         </div>
 
         <!-- -->
@@ -114,7 +115,7 @@ app.component("menu-seleccion", {
                 const expr = funParser.parse(value);
                 const fun = x => expr.evaluate({x});
                 graph.reset();
-                graph.add(fun, "blue");
+                graph.add(fun, "#007bff");
                 return fun;
             } catch (e) {
                 if (value === "" && graph) {
