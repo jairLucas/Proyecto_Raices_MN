@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Metodos Numericos</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/icon/grafico.svg" rel="icon">
+  <link href="img/icon/grafico.svg" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="lib/animate/animate.min.css" rel="stylesheet">
+  <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+  <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+  <!-- CSS principal -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!--==========================
+  BARRA DE NAVEGACION
+  ============================-->
+  <header id="header" class="fixed-top">
+    <div class="container">
+      <div class="logo float-left">
+        <!--<a href="#intro" class="scrollto"><img src="img/icon/grafico.svg" alt="" class="img-fluid"></a>
+        <!--<h1>Métodos Numéricos</h1>-->
+      </div>
+      <div class="logo float-left">
+        <h1>Métodos Numéricos</h1>
+      </div>
+      <nav class="main-nav float-right d-none d-lg-block">
+        <ul>
+          <li><a href="./index.html#inicio">Inicio</a></li>
+          <li><a href="./index.html#about">Teoría</a></li>
+          <li><a href="./index.html#services">Secciones</a></li>
+          <li><a href="./index.html#team">Nuestro Equipo</a></li>
+        </ul>
+      </nav><!-- .main-nav -->
+
+    </div>
+  </header><!-- #header -->
+
+  <main id="main">  
+    <section>
+      <div class="container h-100">
+        <header class="section-header">
+          <h3>Iteración Simple de Punto Fijo</h3>
+        </header>
+        <div class="row justify-content-center h-100">
+          <div class="row about-container">
+            <div class="col-lg-6 content order-lg-1 order-2">
+              <ul>
+                <li>Este método se basa en hacer que la raíz se convierta en un punto fijo e iterando hasta que se alcance dicha raíz</li>
+                <li>Dada una ecuación f(x) = 0, podemos transformarla, de alguna manera, en otra equivalente del tipo x = g(x) para alguna función g.</li>
+                <li>En este caso se tiene que:</li>
+                  <ul>
+                  <li>α es raíz de f(x)= 0 ⇔ </li>
+                  <li>f(α)= 0 ⇔ </li>    
+                  <li>α = g(α) ⇔ </li>
+                  <li>α es raíz de x = g(x)</li>
+                  </ul>
+                
+              </ul>
+          </div>
+          <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
+              <ul>
+                <li>El método del punto fijo parte de un valor inicial x<sub>0</sub> cercano a la raíz</li>
+                <li>Para encontrar la solución, calculamos una nueva aproximación x<sub>1</sub>=g(x<sub>0</sub>). Reemplazamos el nuevo valor obtenido y repetimos el proceso</li>
+                <li>Como en otras formulas iterativas, el error aproximado se calcula como:</li>
+                <img src="./img/metodos/punto.png" >
+              </ul>
+          </div>
+      </div>
+      </div>
+    </section>
+    <!--
+    <section>
+      <div class="container h-100">
+        <div class="row justify-content-center h-100">
+          <div class="row about-container">
+            <div class="col-lg-6 content order-lg-1 order-2">
+              <p>Usando el concepto de replantear la forma original del problema:<br>
+                  Si
+               </p>
+          </div>
+          <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
+              <ul>
+               <li>f(x) = x+g(x)</li>
+               <li>x tal que f(x)=0</li>
+               <li>x tal que x+g(x)=0</li>
+               <li>x=g(x)</li>
+               <li>x<sub>i+1</sub>=g(x<sub>i</sub>)</li>
+               </ul>
+          </div>
+      </div>
+      </div>
+        
+    </section>--> 
+
+     <section>
+      <div class="container h-100">
+        
+        <header class="section-header">
+          <h2>CASOS</h2>
+        </header>
+        <div class="row justify-content-center h-100">
+        <div class="row about-container">
+          <div class="col-lg-6 content order-lg-1 order-2">
+              <h4>CASO 1</h4>
+              <ul>
+              <li>solución monotónicamente convergente</li>
+              <li>mayor acercamiento a la raíz</li>
+              </ul>
+             <img src="./img/metodos/punto1.png" class="imgRedonda">  
+          </div>
+          <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
+              <h4>CASO 2</h4>
+              <ul>
+              <li>solución oscilatoriamente convergente </li>
+              <li>mayor acercamiento de manera oscilatoria a la raíz</li>
+            </ul>
+             <img src="./img/metodos/punto2.png" class="imgRedonda">  
+          </div>
+        </div>     
+      </div>
+    </section>
+    <section>
+      <div class="container h-100">
+        <div class="row justify-content-center h-100">
+        <div class="row about-container">
+          <div class="col-lg-6 content order-lg-1 order-2">
+              <h4>CASO 3</h4>
+              <ul>
+              <li>solución monotónicamente divergente</li>
+              <li>mayor alejamiento de la raíz</li>
+              </ul>
+             <img src="./img/metodos/punto3.png" class="imgRedonda">  
+          </div>
+          <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
+              <h4>CASO 4</h4>
+              <ul>
+              <li>solución oscilatoriamente divergente</li>
+              <li>mayor alejamiento de manera oscilatoria de la raíz</li>
+            </ul>
+             <img src="./img/metodos/punto4.png" class="imgRedonda">  
+          </div>
+        </div>     
+      </div>
+    </section>
+  </main>
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container h-100">
+        <div class="row justify-content-center h-100">
+            <div class="col-sm-6 text-center">
+              <div class="footer-info">
+                <h3>Metodos Numericos</h3>
+                <h4>Raices de ecuaciones</h4>
+                <p>Este es un proyecto realizado para el curso de <strong>Métodos Numericos</strong> de la <strong>Universidad Nacional de San Agustin</strong> de Arequipa</p>
+                <div class="social-links">
+                  <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                  <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                  <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                  <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+  </footer><!-- #footer -->
+  <!-- ir hacia arriba de nuevo -->
+  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+  <!-- Libreria JavaScript -->
+  <script src="lib/jquery/jquery.min.js"></script>
+  <script src="lib/jquery/jquery-migrate.min.js"></script>
+  <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="lib/easing/easing.min.js"></script>
+  <script src="lib/mobile-nav/mobile-nav.js"></script>
+  <script src="lib/wow/wow.min.js"></script>
+  <script src="lib/waypoints/waypoints.min.js"></script>
+  <script src="lib/counterup/counterup.min.js"></script>
+  <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="lib/isotope/isotope.pkgd.min.js"></script>
+  <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+
+  <!-- Plantilla principal de javascript -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

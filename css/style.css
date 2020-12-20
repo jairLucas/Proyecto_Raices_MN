@@ -543,7 +543,16 @@ section{
   border-radius:5px;
   border:2px solid #000;
 }
+.imgForDob{
+  width:300px;
+  height:100px;
+  border-radius:5px;
+  border:2px solid #000;
+}
+.imgEjercicio{
+  border-radius:10px;
 
+}
 #about .about-container .icon-box .icon {
   float: left;
   background: #fff;

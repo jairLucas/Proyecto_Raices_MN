@@ -56,48 +56,36 @@
   </header><!-- #header -->
 
   <main id="main">  
-    <section id="teoria">
+    <section>
       <div class="container h-100">
         <header class="section-header">
-          <h3>Métodos de búsqueda de raíces</h3>
-          <p> 
-            Los métodos numéricos para encontrar los raíces de ecuaciones se dividen en dos grandes grupos:
-          </p>
-          </header>
-            <div class="row about-container justify-content-center h-100">
-              <div class="col-lg-6 content order-lg-1 order-3">
-                <div class="card" style="width: 35rem;">
-                  <img src="./img/glosario/cerrado.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title"><strong>Métodos cerrados</strong></h5>
-                    <p class="card-text">los métodos cerrados requieren de un intervalo que encierre la raíz buscada</p> 
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="./biseccion.html">Bisección o de Bolzano</a></li>
-                    <li class="list-group-item"><a href="./falsa.html">Falsa Posición</a></li>
-                    <li class="list-group-item"><a href="./falsaMod.html">Falsa posición modificada</a></li>
-                  </ul>
-                </div>    
-              </div>
-              <div class="col-lg-0 content order-lg-2 order-2">       
-              </div>
-              <div class="col-lg-6 background order-lg-3 order-1 wow fadeInUp">
-                <div class="card" style="width: 35rem;">
-                  <img src="./img/glosario/abierto.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title"><strong>Métodos abiertos</strong></h5>
-                    <p class="card-text">los métodos abiertos requieren de un solo valor o dos valores iniciales que no necesariamente encierran dicha raíz</p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="./punto.html">Iteración simple de punto fijo</a></li>
-                    <li class="list-group-item"><a href="./newton.html">Método de Newton – Raphson</a></li>
-                    <li class="list-group-item"><a href="./secante.html">Método de la secante</a></li>
-                  </ul>
-                </div>
-              </div>
+          <h3>Newton-Raphson</h3>
+        </header>
+        <div class="row justify-content-center h-100">
+          <div class="row about-container">
+            <div class="col-lg-6 content order-lg-1 order-3">
+              <p>Se deduce a partir de la interpretación gráfica o por medio del uso de la serie de Taylor</p>
+              <ul>
+                <li>De la gráfica, se usa el triángulo formado por la recta tangente que pasa por f(xi), con pendiente f'(xi)  y el eje x.</li>
+                <img src="./img/metodos/newton2.png" class="imgForDob">
+                <li>El punto x<sub>i+1</sub> es la intersección de la recta tangente con el eje x, que es más cercano a la raíz de f(x), valor que es usado para la próxima iteración</li>
+                <br><img src="./img/metodos/newton4.gif" class="imgRedonda"/>
+              </ul>
             </div>
+          <div class="col-lg-1 background order-lg-2 order-2 wow fadeInUp">
+              
           </div>
-    </section><!-- #about --> 
+          <div class="col-lg-5 background order-lg-3 order-1 wow fadeInUp">
+              <img src="./img/metodos/newton.png" class="imgRedonda"><br><br>
+              <ul>
+              <li>Reordenando la ecuación de determina la fórmula para el siguiente punto:</li>
+                <img src="./img/metodos/newton3.png" class="imgForDob">
+                <li>El error se determina como la diferencia entre los valores sucesivos encontrados |x<sub>i+1</sub> – x<sub>i<sub>|</li>
+        <li>La gráfica animada muestra el proceso aplicado varias veces sobre f(x) para encontrar la raiz</li>
+          </ul>
+          </div>
+      </div>
+    </section>
   </main>
 
   <!--==========================
