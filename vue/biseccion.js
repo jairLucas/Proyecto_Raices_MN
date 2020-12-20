@@ -22,7 +22,6 @@ const biseccion = async (params, a, b) => {
     while (true) {
         if (cancelarMetodo.value) return;
 
-        debugger;
         const puntoMedio = (na + nb) / 2;
         const puntoMedioEvaluado = funcion(puntoMedio);
 

@@ -91,6 +91,9 @@ app.component("menu-seleccion", {
             <metodo-cerrado-abstracto v-else-if="metodoUsuario === 'falsa-posicion'" 
                                       :solver="solverObj" 
                                       :metodo="falsaPosicion" />
+            <metodo-cerrado-abstracto v-else-if="metodoUsuario === 'falsa-posicion-modificada'"
+                                      :solver="solverObj"
+                                      :metodo="falsaPosicionModificado" />
             <!--
             <metodo-biseccion v-if="metodoUsuario === 'biseccion'" :solver="solverObj"/>
             <metodo-falsa-posicion v-else-if="metodoUsuario === 'falsa-posicion'" :solver="solverObj"/>
@@ -151,7 +154,8 @@ app.component("menu-seleccion", {
             solverObj,
             // metodos
             biseccion,
-            falsaPosicion
+            falsaPosicion,
+            falsaPosicionModificado
         }
     }
 });
