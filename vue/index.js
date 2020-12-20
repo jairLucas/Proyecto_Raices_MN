@@ -43,32 +43,42 @@ app.component("menu-seleccion", {
     template: `
         <div>
         <h1>Calculadora</h1>
-        <p>Aqui puedes verificar tus respuestas de problemas de raices de polinomios con los diferentes métodos.</p>
         <hr>
 
-        <form @submit.prevent>
-            <label for="entrada-funcion">Ingresa la función:</label>
-            <br>
-            <input v-model="funcionUsuario" type="text" id="entrada-funcion" placeholder="x^3 - 2*x + 5">
-            <br>
-            <label for="nombre-metodo">Selecciona el método:</label>
-            <br>
-            <select v-model="metodoUsuario" id="nombre-metodo">
-                <option selected disabled>Métodos cerrados</option>
-                <option value="biseccion">Bisección</option>
-                <option value="falsa-posicion">Falsa posición</option>
-                <option value="falsa-posicion-modificada">Falsa posición modificada</option>
-                <option selected disabled>Métodos abiertos</option>
-                <option value="punto-fijo">Punto fijo</option>
-                <option value="newton-raphson">Newton Raphson</option>
-                <option value="secante">Secante</option>
-            </select>
-            <br>
-            <label for="decimales-max">Decimales de error: </label>
-            <br>
-            <input type="number" id="decimales-max" v-model.number="decimales" min="1" max="6">
-            <br>
-        </form>
+        <div :style="estilos['contenedor-entrada-grafica']">
+            <form @submit.prevent>
+                <label for="entrada-funcion">Ingresa la función:</label>
+                <br>
+                <input v-model="funcionUsuario" type="text" id="entrada-funcion" placeholder="x^3 - 2*x + 5">
+                <br>
+                <label for="nombre-metodo">Selecciona el método:</label>
+                <br>
+                <select v-model="metodoUsuario" id="nombre-metodo">
+                    <option selected disabled>Métodos cerrados</option>
+                    <option value="biseccion">Bisección</option>
+                    <option value="falsa-posicion">Falsa posición</option>
+                    <option value="falsa-posicion-modificada">Falsa posición modificada</option>
+                    <option selected disabled>Métodos abiertos</option>
+                    <option value="punto-fijo">Punto fijo</option>
+                    <option value="newton-raphson">Newton Raphson</option>
+                    <option value="secante">Secante</option>
+                </select>
+                <br>
+                <label for="decimales-max">Decimales de error: </label>
+                <br>
+                <input type="number" id="decimales-max" v-model.number="decimales" min="1" max="6">
+                <br>
+            </form>
+            <div class="grafica" :style="estilos['grafica']">
+                <div id="vsplitter">
+                    <div id="wrapper">
+                        <div id="graph_wrapper">
+                            <canvas id="graph"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div v-if="funcionParseada === null && metodoUsuario !== ''">
             <p :style="{padding: '0.5rem 0', color: '#f44336'}">La función ingresada es incorrecta.</p>
@@ -82,6 +92,17 @@ app.component("menu-seleccion", {
         </div>
     `,
     setup() {
+        const estilos = {
+            "contenedor-entrada-grafica": {
+                display: "grid",
+                gridTemplateColumns: "40vw auto"
+            },
+            "grafica": {
+                height: "50vh",
+                width: "50vw",
+                overflow: "hidden"
+            }
+        };
         const funcionUsuario = Vue.ref("");
         const metodoUsuario = Vue.ref("");
         const decimales = Vue.ref(null);
@@ -91,8 +112,14 @@ app.component("menu-seleccion", {
             const value = funcionUsuario.value;
             try {
                 const expr = funParser.parse(value);
-                return (x) => expr.evaluate({x})
+                const fun = x => expr.evaluate({x});
+                graph.reset();
+                graph.add(fun, "blue");
+                return fun;
             } catch (e) {
+                if (value === "" && graph) {
+                    graph.reset();
+                }
                 return null;
             }
         });
@@ -107,6 +134,7 @@ app.component("menu-seleccion", {
         });
 
         return {
+            estilos,
             metodoUsuario,
             funcionUsuario,
             funcionParseada,

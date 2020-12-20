@@ -13,7 +13,7 @@ body {
 }
 
 #wrapper {
-    min-height: 80vh;
+    height: 50vh;
 }
 
 .cont-entrada {
