@@ -56,48 +56,31 @@
   </header><!-- #header -->
 
   <main id="main">  
-    <section id="teoria">
+    <section>
       <div class="container h-100">
         <header class="section-header">
-          <h3>Métodos de búsqueda de raíces</h3>
-          <p> 
-            Los métodos numéricos para encontrar los raíces de ecuaciones se dividen en dos grandes grupos:
+          <h3>Método de Falsa Posición (o Regula Falsi)</h3>
+        </header>
+          <p>Al igual que en el método de la regla falsa debemos construir una recta y luego encontrar su intersección con el eje de las abscisas.<br>
+Esta intersección será nuestro nuevo punto de división para el intervalo.
+</p>
+          <p>Se propone construir la recta con la mitad del valor de la función en el extremo que se repita más de dos
+              veces seguidas. Es decir, al construir la recta tomaremos el nuevo extremo, calculado en la iteración anterior, y el valor de la función en él para obtener el primer punto de la recta. El segundo punto de la recta será el otro extremo, el que se repite por segunda vez, y la mitad del valor de la función en este.
           </p>
-          </header>
-            <div class="row about-container justify-content-center h-100">
-              <div class="col-lg-6 content order-lg-1 order-3">
-                <div class="card" style="width: 35rem;">
-                  <img src="./img/glosario/cerrado.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title"><strong>Métodos cerrados</strong></h5>
-                    <p class="card-text">los métodos cerrados requieren de un intervalo que encierre la raíz buscada</p> 
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="./biseccion.html">Bisección o de Bolzano</a></li>
-                    <li class="list-group-item"><a href="./falsa.html">Falsa Posición</a></li>
-                    <li class="list-group-item"><a href="./falsaMod.html">Falsa posición modificada</a></li>
-                  </ul>
-                </div>    
-              </div>
-              <div class="col-lg-0 content order-lg-2 order-2">       
-              </div>
-              <div class="col-lg-6 background order-lg-3 order-1 wow fadeInUp">
-                <div class="card" style="width: 35rem;">
-                  <img src="./img/glosario/abierto.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title"><strong>Métodos abiertos</strong></h5>
-                    <p class="card-text">los métodos abiertos requieren de un solo valor o dos valores iniciales que no necesariamente encierran dicha raíz</p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="#">Iteración simple de punto fijo</a></li>
-                    <li class="list-group-item"><a href="#">Método de Newton – Raphson</a></li>
-                    <li class="list-group-item"><a href="#">Método de la secante</a></li>
-                  </ul>
-                </div>
-              </div>
+          <h4><strong>PASOS<strong></h4>
+          <p>
+          <ol>
+            <li>Detectar si uno de los limites del intervalo se “estanca”</li>
+            <li>Si es así, dividir a la mitad el valor de la función en este punto.</li>
+          </ol>
+          </p>
+           <div class="container h-100">
+        <div class="row justify-content-center h-100">
+            <div class="col-sm-6 text-center">
+                 <img src="./img/metodos/falsiM.png" class="imgGlosario">
             </div>
-          </div>
-    </section><!-- #about --> 
+        </div>
+    </section>
   </main>
 
   <!--==========================

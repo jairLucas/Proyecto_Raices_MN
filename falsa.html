@@ -56,48 +56,79 @@
   </header><!-- #header -->
 
   <main id="main">  
-    <section id="teoria">
+    <section>
       <div class="container h-100">
         <header class="section-header">
-          <h3>Métodos de búsqueda de raíces</h3>
-          <p> 
-            Los métodos numéricos para encontrar los raíces de ecuaciones se dividen en dos grandes grupos:
-          </p>
-          </header>
-            <div class="row about-container justify-content-center h-100">
-              <div class="col-lg-6 content order-lg-1 order-3">
-                <div class="card" style="width: 35rem;">
-                  <img src="./img/glosario/cerrado.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title"><strong>Métodos cerrados</strong></h5>
-                    <p class="card-text">los métodos cerrados requieren de un intervalo que encierre la raíz buscada</p> 
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="./biseccion.html">Bisección o de Bolzano</a></li>
-                    <li class="list-group-item"><a href="./falsa.html">Falsa Posición</a></li>
-                    <li class="list-group-item"><a href="./falsaMod.html">Falsa posición modificada</a></li>
-                  </ul>
-                </div>    
-              </div>
-              <div class="col-lg-0 content order-lg-2 order-2">       
-              </div>
-              <div class="col-lg-6 background order-lg-3 order-1 wow fadeInUp">
-                <div class="card" style="width: 35rem;">
-                  <img src="./img/glosario/abierto.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title"><strong>Métodos abiertos</strong></h5>
-                    <p class="card-text">los métodos abiertos requieren de un solo valor o dos valores iniciales que no necesariamente encierran dicha raíz</p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="#">Iteración simple de punto fijo</a></li>
-                    <li class="list-group-item"><a href="#">Método de Newton – Raphson</a></li>
-                    <li class="list-group-item"><a href="#">Método de la secante</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+          <h3>Método de Falsa Posición (o Regula Falsi)</h3>
+        </header>
+        <div class="row justify-content-center h-100">
+          <div class="row about-container">
+          <div class="col-lg-6 content order-lg-1 order-2">
+          <br><br>
+            <ul>
+            <li>Consideremos una función f continua en un intervalo [xi, xd] y tal que f(xi)f(xd)< 0</li>
+            <li>El método de Posición Falsa, para encontrar una aproximación de una raíz α ∈(xi, xd) de f(x)= 0 , es similar al método de Bisección en el sentido de que se generan subintervalos que encierran a la raíz α, pero esta vez xr no es el punto medio del intervalo, sino el punto de intersección de la recta que pasa por los puntos (xi, f(xi)) , (xd, f(xd)) con el eje x</li>
+            <li>Al reemplazar la curva por una recta se obtiene una "posición falsa" de la raíz, de aquí el nombre del método. También se le conoce como <strong>método de Interpolación Lineal Inversa</strong></li> 
+          </ul>
           </div>
-    </section><!-- #about --> 
+          <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
+            <img src="./img/metodos/falsi.png" class="imgRedonda">
+          </div>
+          <div class="row about-container">
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container h-100">
+        <header class="section-header">
+          <h2>Algoritmo del método de Falsa posición</h2>
+        </header>
+        <div class="row justify-content-center h-100">
+        <div class="row about-container">
+          <div class="col-lg-4 content order-lg-1 order-3">
+             <h6>PASO 1<h6>
+             <p>Determinar el intervalo que encierra la raíz</p>    
+          </div>
+          <div class="col-lg-4 background order-lg-2 order-2 wow fadeInUp">
+              <h6>PASO 2<h6> 
+               <P>Calcular el valor de la raíz aproximada según la formula, es decir calcular el valor del punto de cruce de la línea que une f(xi) y f(xd) con el eje x</p>
+          </div>
+          <div class="col-lg-4 content order-lg-3 order-1">
+            <h6>PASO 3<h6>
+               <p>Determinar si el valor encontrado es una solución al problema</p>
+               <ul>
+                <li>Si la respuesta es si – finalizar los cálculos</li>
+                <li>Si la respuesta es no – comparar los signos de las funciones en los extremos del intervalos con el signo de la función de la raíz aproximada. Eliminar el intervalo que no encierra la raíz y repetir el procedimiento</li>
+               </ul>
+          </div>
+          
+        </div>     
+      </div>
+    </section>
+
+     <section>
+      <div class="container h-100">
+        
+        <header class="section-header">
+          <h2>Falsa posicion <strong>vs</strong> Bisección</h2>
+          <p>Este método tiene la desventaja, con respecto al método de Bisección en caso de  que la longitud del subintervalo que contiene a la raíz no tiende a cero (funciones cóncavas hacia arriba o hacia abajo) en la vecindad de la raíz, lo que hace que uno de los extremos de los subintervalos se aproxime a la raíz, mientras el otro permanece fijo</p>
+        </header>
+        <div class="row justify-content-center h-100">
+        <div class="row about-container">
+          <div class="col-lg-9 content order-lg-1 order-2">
+             <ul>
+             <li>En algunos casos funciona de manera ineficiente</li>
+             <li>Unilateralidad – conforme se avanza en las iteraciones, uno de los puntos limites permanece fijo</li>
+             <li>Por ejemplo:</li>
+             <img src="./img/metodos/falsi2.png" class="imgFor"/>
+             </ul>  
+          </div>
+          <div class="col-lg-3 background order-lg-2 order-1 wow fadeInUp">
+              <img src="./img/metodos/falsi3.png" class="imgGlosario"/>
+          </div>
+        </div>     
+      </div>
+    </section>
   </main>
 
   <!--==========================

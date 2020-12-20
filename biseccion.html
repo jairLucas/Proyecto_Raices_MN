@@ -59,45 +59,81 @@
     <section id="teoria">
       <div class="container h-100">
         <header class="section-header">
-          <h3>Métodos de búsqueda de raíces</h3>
-          <p> 
-            Los métodos numéricos para encontrar los raíces de ecuaciones se dividen en dos grandes grupos:
+          <h3>Métodos de Bisección o de Bolzano</h3>
+        </header>
+        <div class="row justify-content-center h-100">
+          <p>
+            El método se basa en el teorema del valor intermedio, conocido como método de la bisección, búsqueda binaria, partición de intervalos o de Bolzano.<br>
+            Es un tipo de búsqueda incremental en el que:
           </p>
-          </header>
-            <div class="row about-container justify-content-center h-100">
-              <div class="col-lg-6 content order-lg-1 order-3">
-                <div class="card" style="width: 35rem;">
-                  <img src="./img/glosario/cerrado.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title"><strong>Métodos cerrados</strong></h5>
-                    <p class="card-text">los métodos cerrados requieren de un intervalo que encierre la raíz buscada</p> 
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="./biseccion.html">Bisección o de Bolzano</a></li>
-                    <li class="list-group-item"><a href="./falsa.html">Falsa Posición</a></li>
-                    <li class="list-group-item"><a href="./falsaMod.html">Falsa posición modificada</a></li>
-                  </ul>
-                </div>    
-              </div>
-              <div class="col-lg-0 content order-lg-2 order-2">       
-              </div>
-              <div class="col-lg-6 background order-lg-3 order-1 wow fadeInUp">
-                <div class="card" style="width: 35rem;">
-                  <img src="./img/glosario/abierto.png" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title"><strong>Métodos abiertos</strong></h5>
-                    <p class="card-text">los métodos abiertos requieren de un solo valor o dos valores iniciales que no necesariamente encierran dicha raíz</p>
-                  </div>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="#">Iteración simple de punto fijo</a></li>
-                    <li class="list-group-item"><a href="#">Método de Newton – Raphson</a></li>
-                    <li class="list-group-item"><a href="#">Método de la secante</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+          <ul>
+            <li>El intervalo se divide siempre en la mitad</li>
+            <li>Si la función cambia de signo sobre un intervalo, se evalúa el valor de la función en el punto medio</li>
+            <li>La posición de la raíz se determina en el punto medio del sub-intervalo, izquierdo o derecho, dentro del cual ocurre un cambio de signo</li>
+            <li>El proceso se repite hasta obtener una mejor aproximación</li>
+          </ul>
+          
+          <div class="row about-container">
+
+          <div class="col-lg-6 content order-lg-1 order-2">
+          <br><br>
+          <ol>
+            <li>La gráfica muestra el proceso en forma animada, observe la forma en que progresivamente se acercan los puntos [a,b], donde se mantienen valores con signo diferente entre f(a) y f(b).
+            </li>
+          <li>
+            Observamos la gráfica para una sola iteración y asi describir mejor el método.
+Para la primera iteración se tiene como procedimiento que la función tiene un cambio de signo en el intervalo [a,b].
+          </li>
+          <li>
+          En intervalo se divide en la mitad, representado por el punto c, obteniendo el sub-intervalo izquierdo [a,c] o sub-intervalo derecho [c,b].
+          </li>
+          <li>
+          El sub-intervalo que contiene la función con un cambio de signo, se convierte en el nuevo intervalo a ser analizado en la siguiente iteración
+          </li>
+          </ol>
           </div>
+
+          <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
+            <img src="./img/metodos/Biseccion01_GIF.gif" class="imgRedonda">
+          </div>
+          
+        </div>
+      </div>
     </section><!-- #about --> 
+    <section id="error_biseccion">
+      <div class="container h-100">
+        <header class="section-header">
+          <h2>Cota de error</h2>
+        </header>
+        <div class="row justify-content-center h-100">
+        <div class="row about-container">
+          <div class="col-lg-2 content order-lg-1 order-6">
+          <p>
+            Suponga que f ∈ C[a,b] y f(a)*f(b)<0, f es una función en el intervalo [a,b] y que presenta un cambio de signo
+          </p>      
+          </div>
+          <div class="col-lg-2 background order-lg-2 order-5 wow fadeInUp">
+            <img src="./img/metodos/error1.png" class="imgPeq">
+          </div>
+          <div class="col-lg-2 content order-lg-3 order-4">
+          <p>
+            la desigualdad implica que Pn converge a p con una razón de convergencia de orden:
+          </p>      
+          </div>
+          <div class="col-lg-2 background order-lg-4 order-3 wow fadeInUp">
+            <img src="./img/metodos/error2.png" class="imgPeq">
+          </div>
+          <div class="col-lg-2 content order-lg-5 order-2">
+          <p>
+            es decir:
+          </p>    
+          </div>
+          <div class="col-lg-2 background order-lg-6 order-1 wow fadeInUp">
+            <img src="./img/metodos/error3.png" class="imgPeq">
+          </div>
+        </div>     
+      </div>
+    </section>
   </main>
 
   <!--==========================
