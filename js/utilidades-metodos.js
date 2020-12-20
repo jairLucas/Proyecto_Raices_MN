@@ -10,3 +10,24 @@ const precisionFnBuilder = (n) => {
     const valor = parseFloat(valorPrecisionStr);
     return (x) => Math.abs(x) < valor;
 };
+
+const funParser = new exprEval.Parser();
+const vueStringAFuncion = (funcionUsuario, color = "#007bff", reiniciar = true) => Vue.computed(() => {
+    const value = funcionUsuario.value;
+    try {
+        const expr = funParser.parse(value);
+        const fun = x => expr.evaluate({x});
+
+        if (reiniciar) {
+            graph.reset();
+        }
+
+        graph.add(fun, color);
+        return fun;
+    } catch (e) {
+        if (value === "" && graph) {
+            graph.reset();
+        }
+        return null;
+    }
+});

@@ -85,15 +85,18 @@ app.component("menu-seleccion", {
         <!-- Para hacer que el computed de Vue reaccione -->
         <div style="display: none">{{ funcionParseada }}</div>
         <div :style="{marginTop: '2rem'}">
-            <metodo-cerrado-abstracto v-if="metodoUsuario === 'biseccion'" 
-                                      :solver="solverObj" 
-                                      :metodo="biseccion" />
-            <metodo-cerrado-abstracto v-else-if="metodoUsuario === 'falsa-posicion'" 
-                                      :solver="solverObj" 
-                                      :metodo="falsaPosicion" />
+            <metodo-cerrado-abstracto v-if="metodoUsuario === 'biseccion'"
+                                      :solver="solverObj"
+                                      :metodo="biseccion"/>
+            <metodo-cerrado-abstracto v-else-if="metodoUsuario === 'falsa-posicion'"
+                                      :solver="solverObj"
+                                      :metodo="falsaPosicion"/>
             <metodo-cerrado-abstracto v-else-if="metodoUsuario === 'falsa-posicion-modificada'"
                                       :solver="solverObj"
-                                      :metodo="falsaPosicionModificado" />
+                                      :metodo="falsaPosicionModificado"/>
+            <metodo-newton-raphson v-else-if="metodoUsuario === 'newton-raphson'"
+                                   :solver="solverObj"
+                                   :funcionParseada="funcionParseada"/>
             <!--
             <metodo-biseccion v-if="metodoUsuario === 'biseccion'" :solver="solverObj"/>
             <metodo-falsa-posicion v-else-if="metodoUsuario === 'falsa-posicion'" :solver="solverObj"/>
@@ -119,22 +122,7 @@ app.component("menu-seleccion", {
         const metodoUsuario = Vue.ref("");
         const decimales = Vue.ref(null);
 
-        const funParser = new exprEval.Parser();
-        const funcionParseada = Vue.computed(() => {
-            const value = funcionUsuario.value;
-            try {
-                const expr = funParser.parse(value);
-                const fun = x => expr.evaluate({x});
-                graph.reset();
-                graph.add(fun, "#007bff");
-                return fun;
-            } catch (e) {
-                if (value === "" && graph) {
-                    graph.reset();
-                }
-                return null;
-            }
-        });
+        const funcionParseada = vueStringAFuncion(funcionUsuario);
 
         const solverObj = solver(funcionParseada, decimales);
 

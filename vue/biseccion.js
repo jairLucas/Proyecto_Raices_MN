@@ -10,6 +10,11 @@ const biseccion = async (params, a, b) => {
     } = params;
     console.log("Ejecutando metodo de biseccion");
 
+    if (funcion === null) {
+        callbackError("Error. La función ingresada es inválida.");
+        return;
+    }
+
     let [na, nb] = [a, b];
     const validarPrecision = precisionFnBuilder(precision);
     let iter = 1;

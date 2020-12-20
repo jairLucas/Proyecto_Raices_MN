@@ -58,7 +58,7 @@ app.component("metodo-cerrado-abstracto", {
                 gridColumnGap: "1rem"
             },
             "contenedor-tabla": {
-                maxHeight: "80vh",
+                height: "80vh",
                 overflow: "auto",
                 border: "solid 2px gray"
             }
