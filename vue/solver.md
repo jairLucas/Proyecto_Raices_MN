@@ -31,7 +31,3 @@ type retorno = {
 `run`: Ejecuta el método `metodo`, pasandole los parametros `...params`. Devuelve una función la 
        cual se usa para cancelar el método.
 
-
-
-
-

@@ -33,7 +33,7 @@ const solver = (funcion, precision, intervalo = 250) => {
                 callbackError,
                 callbackStep,
                 callbackExito
-            },...params);
+            }, ...params);
             return cancelarMetodoFn;
         }
     };
@@ -83,10 +83,18 @@ app.component("menu-seleccion", {
         </div>
 
         <!-- Para hacer que el computed de Vue reaccione -->
-        <div style="display: none">{{funcionParseada}}</div>
+        <div style="display: none">{{ funcionParseada }}</div>
         <div :style="{marginTop: '2rem'}">
-            <metodo-biseccion v-if="metodoUsuario === 'biseccion'" :funcionUsuario="funcionParseada"/>
+            <metodo-cerrado-abstracto v-if="metodoUsuario === 'biseccion'" 
+                                      :solver="solverObj" 
+                                      :metodo="biseccion" />
+            <metodo-cerrado-abstracto v-else-if="metodoUsuario === 'falsa-posicion'" 
+                                      :solver="solverObj" 
+                                      :metodo="falsaPosicion" />
+            <!--
+            <metodo-biseccion v-if="metodoUsuario === 'biseccion'" :solver="solverObj"/>
             <metodo-falsa-posicion v-else-if="metodoUsuario === 'falsa-posicion'" :solver="solverObj"/>
+            -->
         </div>
 
         <!-- -->
@@ -140,7 +148,10 @@ app.component("menu-seleccion", {
             funcionUsuario,
             funcionParseada,
             decimales,
-            solverObj
+            solverObj,
+            // metodos
+            biseccion,
+            falsaPosicion
         }
     }
 });

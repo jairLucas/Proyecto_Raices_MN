@@ -1,77 +1,54 @@
-app.component("metodo-biseccion", {
-    template: `
-    <div>
-        <form @submit.prevent :style="estilos['contenedor-form']">
-            <label for="valor-min">Punto inferior: </label>
-            <input type="number" id="valor-min" v-model.number="valorMin" step="any">
-            <span></span>
-            <label for="valor-max">Punto superior: </label>
-            <input type="number" id="valor-max" v-model.number="valorMax" step="any">
-            <span></span>
-        </form>
-        <br>
-        <button @click="calcular">Calcular</button>
-        <br>
-        <br>
-        <table class="table table-striped">
-            <thead class="table-dark">
-            <tr>
-                <th>i</th>
-                <th>a</th>
-                <th>b</th>
-                <th>raíz</th>
-                <th>error</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr v-for="arr in entradas">
-                <td v-for="v in arr">{{v}}</td>
-            </tr>
-            </tbody>
-        </table>
-        <!-- -->
-    </div>
-    `,
-    props: {
-        funcionUsuario: {
-            type: Function,
-            required: true
-        }
-    },
-    setup(props) {
-        const estilos = {
-            "contenedor-form": {
-                display: "grid",
-                gridTemplateColumns: "13rem 8rem auto",
-                gridColumnGap: "1rem"
-            }
-        };
-        const valorMin = Vue.ref(null);
-        const valorMax = Vue.ref(null);
-        const decimales = Vue.ref(null);
+const biseccion = async (params, a, b) => {
+    const {
+        funcion,
+        precision,
+        intervalo,
+        cancelarMetodo,
+        callbackError,
+        callbackStep,
+        callbackExito
+    } = params;
+    console.log("Ejecutando metodo de biseccion");
 
-        const entradas = Vue.ref([]);
+    let [na, nb] = [a, b];
+    const validarPrecision = precisionFnBuilder(precision);
+    let iter = 1;
 
-        const limpiarValores = () => entradas.value = [];
-
-        const calcular = () => {
-            limpiarValores();
-            biseccion(
-                props.funcionUsuario,
-                valorMin.value,
-                valorMax.value,
-                decimales.value,
-                (...numeros) => entradas.value.push(numeros)
-            );
-        };
-
-        return {
-            estilos,
-            valorMin,
-            valorMax,
-            decimales,
-            calcular,
-            entradas
-        }
+    // Hacer que na sea negativo y nb sea positivo
+    if (funcion(nb) < funcion(na)) {
+        [na, nb] = [nb, na];
     }
-});
+
+    while (true) {
+        if (cancelarMetodo.value) return;
+
+        debugger;
+        const puntoMedio = (na + nb) / 2;
+        const puntoMedioEvaluado = funcion(puntoMedio);
+
+        callbackStep({
+            i: iter,
+            puntoInferior: na,
+            puntoSuperior: nb,
+            raiz: puntoMedio,
+            error: Math.abs(puntoMedioEvaluado)
+        });
+
+        if (validarPrecision(puntoMedioEvaluado)) {
+            callbackExito(puntoMedio);
+            return;
+        } else if (na === nb) {
+            callbackError("El método no converge. Revisa que los puntos sean válidos.");
+            return;
+        }
+
+        if (puntoMedioEvaluado < 0) {
+            na = puntoMedio;
+        } else {
+            nb = puntoMedio;
+        }
+        iter++;
+
+        await esperar(intervalo);
+    }
+};
