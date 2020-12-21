@@ -94,6 +94,9 @@ app.component("menu-seleccion", {
             <metodo-cerrado-abstracto v-else-if="metodoUsuario === 'falsa-posicion-modificada'"
                                       :solver="solverObj"
                                       :metodo="falsaPosicionModificado"/>
+            <metodo-punto-fijo v-else-if="metodoUsuario === 'punto-fijo'"
+                               :solver="solverObj"
+                               :funcionParseada="funcionParseada"/>
             <metodo-newton-raphson v-else-if="metodoUsuario === 'newton-raphson'"
                                    :solver="solverObj"
                                    :funcionParseada="funcionParseada"/>
