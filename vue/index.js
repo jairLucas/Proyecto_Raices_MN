@@ -97,6 +97,9 @@ app.component("menu-seleccion", {
             <metodo-newton-raphson v-else-if="metodoUsuario === 'newton-raphson'"
                                    :solver="solverObj"
                                    :funcionParseada="funcionParseada"/>
+            <metodo-cerrado-abstracto v-else-if="metodoUsuario === 'secante'"
+                                      :solver="solverObj"
+                                      :metodo="secante"/>
             <!--
             <metodo-biseccion v-if="metodoUsuario === 'biseccion'" :solver="solverObj"/>
             <metodo-falsa-posicion v-else-if="metodoUsuario === 'falsa-posicion'" :solver="solverObj"/>
@@ -143,7 +146,8 @@ app.component("menu-seleccion", {
             // metodos
             biseccion,
             falsaPosicion,
-            falsaPosicionModificado
+            falsaPosicionModificado,
+            secante
         }
     }
 });
