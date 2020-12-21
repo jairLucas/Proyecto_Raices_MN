@@ -9,7 +9,7 @@ function Graph() {
     this.gridlines = "normal";
     this.settings = {};
 
-    this.setQuality = function (q) {
+    this.setQuality = function(q) {
         $("#quality_select a").removeClass("option_selected");
         q2 = String(q).replace(".", "");
         $("#quality_select_" + q2).addClass("option_selected");
@@ -17,14 +17,14 @@ function Graph() {
         this.calc.draw();
     }
 
-    this.setAngles = function (q) {
+    this.setAngles = function(q) {
         $("#angle_select a").removeClass("option_selected");
         $("#angle_select_" + q).addClass("option_selected");
         Calc.angles = q;
         this.calc.draw();
     }
 
-    this.setTool = function (t) {
+    this.setTool = function(t) {
         $("#tool_select a").removeClass("toolbar_selected");
         $("#tool_select_" + t).addClass("toolbar_selected");
 
@@ -37,12 +37,12 @@ function Graph() {
         this.calc.draw();
     }
 
-    this.doTrace = function (xval) {
+    this.doTrace = function(xval) {
         this.calc.draw();
         this.calc.drawTrace(this.calc.getEquation(this.currEq), "#000000", xval);
     }
 
-    this.setGridlines = function (t) {
+    this.setGridlines = function(t) {
         $("#gridlines_select a").removeClass("option_selected");
         $("#gridlines_select_" + t).addClass("option_selected");
 
@@ -50,24 +50,25 @@ function Graph() {
         this.calc.draw();
     }
 
-    this.updateValues = function () {
+    this.updateValues = function() {
         $("input.jsgcalc_xmin").val(Math.round(this.calc.currCoord.x1 * 1000) / 1000);
         $("input.jsgcalc_xmax").val(Math.round(this.calc.currCoord.x2 * 1000) / 1000);
         $("input.jsgcalc_ymin").val(Math.round(this.calc.currCoord.y1 * 1000) / 1000);
         $("input.jsgcalc_ymax").val(Math.round(this.calc.currCoord.y2 * 1000) / 1000);
     }
 
-    this.add = function (f, color) {
-        this.calc.lines.push({equation: f, color: color || this.lineColors[this.calc.lines.length]});
+    this.add = function(f, color) {
+        this.calc.lines.push({ equation: f, color: color || this.lineColors[this.calc.lines.length] });
         this.calc.draw();
     }
 
-    this.reset = function () {
+    this.reset = function() {
         this.calc.lines = [];
         this.calc.draw();
     }
 
-    this.resize = function () {
+    this.resize = function() {
+
         this.calc.resizeGraph($("#wrapper").width(), $("#wrapper").height());
     }
 
@@ -77,6 +78,7 @@ function Graph() {
 
 var graph;
 
+
 function resize() {
     $("#vsplitter").height($("#wrapper").height());
     // $("#vsplitter").css("height", window.innerHeight + "px");
@@ -84,21 +86,19 @@ function resize() {
     graph.resize();
 }
 
-$(function () {
+$(function() {
     graph = new Graph();
 
-    $(".toolbox_close a").click(function () {
+    $(".toolbox_close a").click(function() {
         $(".toolbox").hide();
     })
-    document.body.onselectstart = function () {
+    document.body.onselectstart = function() {
         return false;
     }
 
     window.addEventListener("resize", resize);
     resize();
 
-    $("#vsplitter").split({orientation: 'horizontal', position: "100%"});
-    $("#vsplitter").bind("split.resize", resize);
 
     resize();
 });
