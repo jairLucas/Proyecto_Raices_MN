@@ -35,7 +35,7 @@
             box-sizing: border-box;
         }
         
-        ::selection {
+         ::selection {
             background: #fff;
             color: #117eeb;
         }
@@ -64,6 +64,11 @@
         }
         
         .result {
+            font-size: 2rem;
+            color: #117eeb;
+        }
+        
+        .cal {
             font-size: 2rem;
             color: #117eeb;
         }
@@ -221,7 +226,7 @@
             color: crimson;
         }
         
-        .result {
+        .res {
             color: greenyellow
         }
     </style>
@@ -246,7 +251,7 @@
                 <ul>
                     <li class="active"><a href="./index.html#inicio">Inicio</a></li>
                     <li><a href="./index.html#about">Teoría</a></li>
-                    <li><a href="./index.html#services">Secciones</a></li>
+                    <li><a href="./index.html#services">Práctica</a></li>
                     <li><a href="./index.html#team">Nuestro Equipo</a></li>
                 </ul>
             </nav>
@@ -264,19 +269,24 @@
                 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
                 <div class="containerx">
                     <div class="heading">
-                        <h1 class="heading__text">Mini Examen</h1>
+                        <h1 class="heading__text">Mini Examen Falsa Posicion</h1>
                     </div>
 
-                    <ul>
+
+<ul>
   <li><a href="./miniexamensecante.html">Mini Examen Secante</a></li>
   <li><a href="./miniexamen.html">Mini Examen Biseccion</a></li>
+  <li><a href="./miniexamennewtonrapshon.html">Mini Examen Newton-Rapshon</a></li>
+  <li><a href="./miniexamenpuntofijo.html">Mini Examen Punto Fijo</a></li>
 </ul>
-
                     <!-- Quiz section -->
                     <div class="quiz">
                         <div class="quiz__heading">
                             <h2 class="quiz__heading-text">
                                 Tuviste el <span class="result"></span> de respuestas correctas.
+                            </h2>
+                            <h2 style=" text-align:center" class="quiz__heading-text1" id="cal">
+
                             </h2>
                         </div>
 
@@ -305,111 +315,116 @@
           <span class="design"></span>
           <span class="text">Método e Gauus - Jordan.</span>
         </label>
+                                <span class="text" id="resp1"></span>
                             </div>
 
                             <div class="quiz-form__quiz">
                                 <p class="quiz-form__question">
-                                    <div class="textel">2. El error de redondeo, se ocasiona debido a las limitaciones propias de la maquina para representar cantidades que requieren:
-</div>
+                                    <div class="textel">2. El error de redondeo, se ocasiona debido a las limitaciones propias de la maquina para representar cantidades que requieren:</div>
                                 </p>
                                 <label class="quiz-form__ans" for="q21">
-          <input type="radio" name="q2" id="q21" value="A" checked />
+          <input type="radio" name="q2" id="q21" value="A" checked />A_
           <span class="design"></span>
           <span class="text">Un gran numero de Elementos.</span>
         </label>
                                 <label class="quiz-form__ans" for="q22">
-          <input type="radio" name="q2" id="q22" value="B" />
+          <input type="radio" name="q2" id="q22" value="B" />B_
           <span class="design"></span>
-          <span class="text">Un mínimo numero de dígitos.</span>
+          <span class="text">Un gran numero de Elementos.</span>
         </label>
                                 <label class="quiz-form__ans" for="q23">
-          <input type="radio" name="q2" id="q23" value="C" />
+          <input type="radio" name="q2" id="q23" value="C" />C_
           <span class="design"></span>
           <span class="text">Pocos digitos</span>
         </label>
                                 <label class="quiz-form__ans" for="q24">
-          <input type="radio" name="q2" id="q24" value="D" />
+          <input type="radio" name="q2" id="q24" value="D" />D_
           <span class="design"></span>
           <span class="text">Un gran numero de dígitos.</span>
         </label>
+                                <span class="text" id="resp2"></span>
                             </div>
 
                             <div class="quiz-form__quiz">
                                 <p class="quiz-form__question">
-                                    <div class="textel">3. ¿Cuál es la fórmula correcta para el número de iteraciones para una tolerancia dada?</div>
+                                    <div class="textel">3. Se define error absoluto como:</div>
                                 </p>
                                 <label class="quiz-form__ans" for="q31">
-          <input type="radio" name="q3" id="q31" value="A" checked />
+          <input type="radio" name="q3" id="q31" value="A" checked />A_
           <span class="design"></span>
-          <span class="text">n≥log((b−a)/2)/log(ε)</span>
+          <span class="text">Ea = |p-p*|/p</span>
         </label>
                                 <label class="quiz-form__ans" for="q32">
-          <input type="radio" name="q3" id="q32" value="B" />
+          <input type="radio" name="q3" id="q32" value="B" />B_
           <span class="design"></span>
-          <span class="text">n≥log((b−a)/ε)/log(2)</span>
+          <span class="text">Ea =  |p-p*| </span>
         </label>
                                 <label class="quiz-form__ans" for="q33">
-          <input type="radio" name="q3" id="q33" value="C" />
+          <input type="radio" name="q3" id="q33" value="C" />C_
           <span class="design"></span>
-          <span class="text">n≥log((b+a)/ε)/log(2)</span>
+          <span class="text">Ea =  |p-p*|p*</span>
         </label>
                                 <label class="quiz-form__ans" for="q34">
-          <input type="radio" name="q3" id="q34" value="D" />
+          <input type="radio" name="q3" id="q34" value="D" />D_
           <span class="design"></span>
-          <span class="text">Ninguna de las anteriores</span>
+          <span class="text">Ea =  |p-p|</span>
         </label>
+                                <span class="text" id="resp3"></span>
                             </div>
 
                             <div class="quiz-form__quiz">
                                 <p class="quiz-form__question">
-                                    <div class="textel">4. ¿Cómo se calcula el punto medio en el método de bisección?</div>
+                                    <div class="textel">4. El error absoluto entre p=0.253 y p*=0.532 es</div>
                                 </p>
                                 <label class="quiz-form__ans" for="q41">
-          <input type="radio" name="q4" id="q41" value="A" checked />
+          <input type="radio" name="q4" id="q41" value="A" checked />A_
           <span class="design"></span>
-          <span class="text">c = (a+b)/2</span>
+          <span class="text">0.279</span>
         </label>
                                 <label class="quiz-form__ans" for="q42">
-          <input type="radio" name="q4" id="q42" value="B" />
+          <input type="radio" name="q4" id="q42" value="B" />B_
           <span class="design"></span>
-          <span class="text">c = (a·b)/2</span>
+          <span class="text">0.785</span>
         </label>
                                 <label class="quiz-form__ans" for="q43">
-          <input type="radio" name="q4" id="q43" value="C" />
+          <input type="radio" name="q4" id="q43" value="C" />C_
           <span class="design"></span>
-          <span class="text">c=(a-b)/2</span>
+          <span class="text">0.729</span>
         </label>
                                 <label class="quiz-form__ans" for="q44">
-          <input type="radio" name="q4" id="q44" value="D" />
+          <input type="radio" name="q4" id="q44" value="D" />D_
           <span class="design"></span>
-          <span class="text">Niguna de las anteriores</span>
+          <span class="text">0.524</span>
         </label>
+                                <span id="texto-result" style="color:magenta; opacity: 0;"></span>
+                                <span class="text" id="resp4"></span>
                             </div>
 
                             <div class="quiz-form__quiz">
                                 <p class="quiz-form__question">
-                                    <div class="textel">5. ¿Qué es una función continua?</div>
+                                    <div class="textel">5. Para la solución de un sistema de ecuaciones lineales se conocen dos técnicas o métodos para su resolución, uno de estos es:</div>
                                 </p>
                                 <label class="quiz-form__ans" for="q51">
-          <input type="radio" name="q5" id="q51" value="A" checked />
+          <input type="radio" name="q5" id="q51" value="A" checked />A_
           <span class="design"></span>
-          <span class="text">Una función que se traza en líneas rectas.</span>
+          <span class="text">Métodos Gráficos.</span>
         </label>
                                 <label class="quiz-form__ans" for="q52">
-          <input type="radio" name="q5" id="q52" value="B" />
+          <input type="radio" name="q5" id="q52" value="B" />B_
           <span class="design"></span>
-          <span class="text">Una función que para pequeños cambios en el argumento genera también pequeños cambios en el resultado.</span>
+          <span class="text">Métodos Interactivos </span>
         </label>
                                 <label class="quiz-form__ans" for="q53">
-          <input type="radio" name="q5" id="q53" value="C" />
+          <input type="radio" name="q5" id="q53" value="C" />C_
           <span class="design"></span>
-          <span class="text">Una función que para pequeños cambios en el argumento genera grandes cambios en el resultado</span>
+          <span class="text">Métodos Indirectos.</span>
         </label>
                                 <label class="quiz-form__ans" for="q54">
-          <input type="radio" name="q5" id="q54" value="D" />
+          <input type="radio" name="q5" id="q54" value="D" />D_
           <span class="design"></span>
-          <span class="text">Niguna de las anteriores</span>
+          <span class="text">Métodos de eliminación.</span>
         </label>
+                                <span class="text" id="resp5"></span>
                             </div>
                             <!--
       <div class="quiz-form__quiz">
@@ -549,7 +564,7 @@
       </div>
 
       -->
-                            <input class="submit" type="submit" value="Submit" />
+                            <input class="submit" type="submit" value="CALIFICAR" />
                         </form>
                     </div>
                 </div>
@@ -621,6 +636,7 @@
         const form = document.querySelector(".quiz-form");
         const label = document.querySelectorAll(".quiz-form__ans");
         const result = document.querySelector(".quiz__heading");
+        const cal = document.querySelector(".quiz__heading1");
 
         form.addEventListener("submit", (e) => {
             e.preventDefault();
@@ -648,8 +664,10 @@
             ];
 
             //check ans
-            userAns.forEach((ans, i) => {
-                if (ans.value === correctAns[i]) {
+            let cont = 1;
+            userAns.forEach((ans, a) => {
+
+                if (ans.value === correctAns[a]) {
                     //score += 10;
                     score += 20;
                     for (let i = 0; i < 4; i++) {
@@ -664,21 +682,42 @@
                         if (isChecked) {
                             ans[i].parentElement.classList.add("wrong");
                         }
-                    }
-                }
-            });
 
+                    }
+                    const respues = document.getElementById("resp" + cont);
+                    const h4 = document.createElement("h5");
+                    h4.innerText = "La respuesta correcta es la opcion " + correctAns[a];
+                    h4.style.color = "#117eeb";
+                    respues.appendChild(h4);
+
+
+
+                }
+                cont++;
+
+
+
+            });
             scrollTo(0, 0);
             result.style.display = "block";
+            let nota = score / 5;
+            const cali = document.getElementById("cal");
+
+            cali.style.color = "#117eeb";
             let output = 0;
             const timer = setInterval(() => {
                 result.querySelector(".result").textContent = `${output}%`;
                 if (output === score) {
                     clearInterval(timer);
+                    cali.innerText = "     Calificacion: " + nota + "/20"
                 } else {
                     output++;
                 }
             }, 25);
+
+
+
+
         });
     </script>
 
