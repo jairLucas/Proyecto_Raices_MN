@@ -60,81 +60,45 @@
     <section id="teoria">
       <div class="container h-100">
         <header class="section-header">
-          <h3>Métodos de Bisección o de Bolzano</h3>
+          <h3>Criterio de Convergencia</h3>
         </header>
         <div class="row justify-content-center h-100">
-          <p>
-            El método se basa en el teorema del valor intermedio, conocido como método de la bisección, búsqueda binaria, partición de intervalos o de Bolzano.<br>
-            Es un tipo de búsqueda incremental en el que:
-          </p>
-          <ul>
-            <li>El intervalo se divide siempre en la mitad</li>
-            <li>Si la función cambia de signo sobre un intervalo, se evalúa el valor de la función en el punto medio</li>
-            <li>La posición de la raíz se determina en el punto medio del sub-intervalo, izquierdo o derecho, dentro del cual ocurre un cambio de signo</li>
-            <li>El proceso se repite hasta obtener una mejor aproximación</li>
-          </ul>
           
           <div class="row about-container">
 
           <div class="col-lg-6 content order-lg-1 order-2">
-          <br><br>
-          <ol>
-            <li>La gráfica muestra el proceso en forma animada, observe la forma en que progresivamente se acercan los puntos [a,b], donde se mantienen valores con signo diferente entre f(a) y f(b).
-            </li>
-          <li>
-            Observamos la gráfica para una sola iteración y asi describir mejor el método.
-Para la primera iteración se tiene como procedimiento que la función tiene un cambio de signo en el intervalo [a,b].
-          </li>
-          <li>
-          En intervalo se divide en la mitad, representado por el punto c, obteniendo el sub-intervalo izquierdo [a,c] o sub-intervalo derecho [c,b].
-          </li>
-          <li>
-          El sub-intervalo que contiene la función con un cambio de signo, se convierte en el nuevo intervalo a ser analizado en la siguiente iteración
-          </li>
-          </ol>
+            <p>
+            En la figura se representa la interpretación geométrica del método. Partimos de un punto inicial x</sub>0</sub> y calculamos  y=g(x<sub>0</sub>). La intersección de esta solución con la recta y=x nos dará un nuevo valor x<sub>1</sub> más próximo a la solución final
+            </p>
+            <img src="./img/convergencia/convergencia1.png"/ class="imgEjercicio"/>
+            <p>Sin embargo, el método puede divergir fácilmente.</p>
+            <p>
+                Es fácil comprobar que el método sólo podrá converger si la derivada g'(x) es menor en valor absoluto que la unidad (que es la pendiente de la recta definida por y=x). Un ejemplo de este caso se muestra en la siguiente figura.
+            </p>
+            <img src="./img/convergencia/convergencia2.png"/ class="imgEjercicio"/>
+            <ul>
+            <li>Esta condición, que a priori puede considerarse una severa restricción del método, puede obviarse fácilmente.</li>
+            <li>Para ello basta elegir la función g(x) del siguiente modo: g(x) = x + αf(x)
+</li>
+<li>de forma que tomando un valor de α adecuado, siempre podemos hacer que g(x) cumpla la condición de la derivada</li>
+          </ul>
           </div>
+          
 
           <div class="col-lg-6 background order-lg-2 order-1 wow fadeInUp">
-            <img src="./img/metodos/Biseccion01_GIF.gif" class="imgRedonda">
+            <h6>CASOS</h6>
+            <p>|g’(x)|<1 El algoritmo converge linealmente <br>
+|g’(x)|>=1 El algoritmo diverge
+<p>
+            <img src="./img/convergencia/convergencia3.png"/ class="imgEjercicio"/>
+            <img src="./img/convergencia/convergencia4.png"/ class="imgEjercicio"/>
+            <img src="./img/convergencia/convergencia5.png"/ class="imgEjercicio"/>
+            <img src="./img/convergencia/convergencia6.png"/ class="imgEjercicio"/>
           </div>
           
         </div>
       </div>
     </section><!-- #about --> 
-    <section id="error_biseccion">
-      <div class="container h-100">
-        <header class="section-header">
-          <h2>Cota de error</h2>
-        </header>
-        <div class="row justify-content-center h-100">
-        <div class="row about-container">
-          <div class="col-lg-2 content order-lg-1 order-6">
-          <p>
-            Suponga que f ∈ C[a,b] y f(a)*f(b)<0, f es una función en el intervalo [a,b] y que presenta un cambio de signo
-          </p>      
-          </div>
-          <div class="col-lg-2 background order-lg-2 order-5 wow fadeInUp">
-            <img src="./img/metodos/error1.png" class="imgPeq">
-          </div>
-          <div class="col-lg-2 content order-lg-3 order-4">
-          <p>
-            la desigualdad implica que Pn converge a p con una razón de convergencia de orden:
-          </p>      
-          </div>
-          <div class="col-lg-2 background order-lg-4 order-3 wow fadeInUp">
-            <img src="./img/metodos/error2.png" class="imgPeq">
-          </div>
-          <div class="col-lg-2 content order-lg-5 order-2">
-          <p>
-            es decir:
-          </p>    
-          </div>
-          <div class="col-lg-2 background order-lg-6 order-1 wow fadeInUp">
-            <img src="./img/metodos/error3.png" class="imgPeq">
-          </div>
-        </div>     
-      </div>
-    </section>
   </main>
 
   <!--==========================
