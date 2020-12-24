@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Metodos Numericos</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicons -->
+    <link href="img/icon/grafico.svg" rel="icon">
+    <link href="img/icon/grafico.svg" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Libraries CSS Files -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- CSS principal -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!--==========================
+  BARRA DE NAVEGACION
+  ============================-->
+    <header id="header" class="fixed-top">
+        <div class="container">
+            <div class="logo float-left">
+                <!--<a href="#intro" class="scrollto"><img src="img/icon/grafico.svg" alt="" class="img-fluid"></a>
+        <!--<h1>Métodos Numéricos</h1>-->
+            </div>
+            <div class="logo float-left">
+                <h1>Métodos Numéricos</h1>
+            </div>
+            <nav class="main-nav float-right d-none d-lg-block">
+                <ul>
+                    <li><a href="../index.html#inicio">Inicio</a></li>
+                    <li><a href="../index.html#about">Teoría</a></li>
+                    <li><a href="../index.html#services">Práctica</a></li>
+                    <li><a href="../index.html#team">Nuestro Equipo</a></li>
+                    <li><a href="../manual.html" class="active">Ayuda</a></li>
+                </ul>
+            </nav>
+            <!-- .main-nav -->
+
+        </div>
+    </header>
+    <!-- #header -->
+
+    <main id="main">
+        <section id="calculadora">
+            <div class="container">
+                <header class="section-header">
+                    <h3>Ejercicios Resueltos</h3>
+                </header>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Método de la Bisección
+                        </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body">
+                                <div class="container h-100">
+                                    <div class="row justify-content-center h-100">
+                                        <div class="col-sm-10 text-center">
+                                            <p><strong>3x<sup>2</sup>-e<sup>x</sup>=0</strong></p>
+                                            <p>usemos el método de Bisección para encontrar la segunda raíz en el intervalo [0.9; 1.0]</p>
+                                            <img src="./img/ejercicios/biseccion1.png" class="imgEjercicio">
+                                            <img src="./img/ejercicios/biseccion2.png" class="imgEjercicio">
+                                            <img src="./img/ejercicios/biseccion3.png" class="imgEjercicio">
+                                            <img src="./img/ejercicios/biseccion4.png" class="imgEjercicio">
+                                            <img src="./img/ejercicios/biseccion5.png" class="imgEjercicio">
+                                            <img src="./img/ejercicios/biseccion6.png" class="imgEjercicio">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Método de Falsa Posición (o Regula Falsi)
+                        </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">
+                                    <div class="container h-100">
+                                        <div class="row justify-content-center h-100">
+                                            <div class="col-sm-10 text-left">
+                                                <p>La ecuación mostrada tiene una raiz en [1,2], ya que f(1)=-5 y f(2)=14. Muestre los resultados parciales del algoritmo de la posición falsa con una tolerancia de 0.0001</p>
+                                                <img src="./img/ejercicios/falsi1.png" class="imgEjercicio">
+                                                <img src="./img/ejercicios/falsi2.png" class="imgEjercicio">
+                                                <p>Semejante a los métodos anteriores se usa un intervalo [a,b] para buscar la raiz. Se divide el intervalo en dos partes al calcular el punto c que divide al intervalo siguiendo la ecuación:</p>
+                                                <img src="./img/ejercicios/falsi3.png" class="imgEjercicio">
+                                                <img src="./img/ejercicios/falsi4.png" class="imgEjercicio">
+                                                <img src="./img/ejercicios/falsi5.png" class="imgEjercicio">
+                                                <img src="./img/ejercicios/falsi6.png" class="imgEjercicio">
+                                                <img src="./img/ejercicios/falsi7.png" class="imgEjercicio">
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="flush-headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Método de Falsa posición modificada
+                        </button>
+                                </h2>
+                                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <div class="container h-100">
+                                            <div class="row justify-content-center h-100">
+                                                <div class="col-sm-12 text-left">
+                                                    <p>f(x)=<strong>e<sup>x</sup>-5x<sup>2</sup></strong></p>
+                                                    <p>usaremos el método de Falsa posicion Modificadopara encontrar las iteraciones correspondientes</p>
+                                                    <img src="./img/ejercicios/falsiM.png" class="imgEjercicio">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingFour">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                            Iteración Simple de Punto Fijo
+                        </button>
+                                    </h2>
+                                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">
+                                            <div class="container h-100">
+                                                <div class="row justify-content-center h-100">
+                                                    <div class="col-sm-10 text-left">
+                                                        <p>Encontrar la solución a la ecuacion, usando el método del punto fijo</p>
+                                                        <p><strong>e<sup>-x</sup>-x=0</strong></p>
+                                                        <p>Al igual que los métodos anteriores, es conveniente determinar el intervalo [a,b] donde es posible evaluar f(x). Se revisa si hay cambio de signo en el intervalo para buscar una raiz</p>
+                                                        <p>Para el ejemplo, el rango de observación será [0,1], pues f(0)=1 es positivo y f(1)=-0.63 es negativo.</p>
+                                                        <p>Para el punto fijo, se reordena la ecuación para para tener una ecuación con la variable independiente separada</p>
+                                                        <p>Se obtiene por un lado la recta identidad y=x, por otro se tiene la función g(x).</p>
+                                                        <p>Se buscará la intersección entre las dos expresiones</p>
+                                                        <p><strong>x=e<sup>-x</sup></strong></p>
+                                                        <p><strong>g(x)=e<sup>-x</sup></strong></p>
+                                                        <img src="./img/ejercicios/punto.png" class="imgEjercicio">
+                                                        <p>Se puede iniciar la búsqueda por uno de los extremos del rango [a,b]. Por ejemplo:</p>
+                                                        <ul>
+                                                            <li>iniciando desde el extremo izquierdo x=a,</li>
+                                                            <li>se determina el valor de b = g(x)</li>
+                                                            <li>se determina la diferencia de la aproximación o error = |b-a|, tolera=0.001</li>
+                                                            <li>se proyecta en la recta identidad, como el nuevo punto de evaluación x=b</li>
+                                                            <li>se repite el proceso para el nuevo valor de x, hasta que el error sea menor al tolerado.</li>
+                                                            <li>En caso que el proceso no converge, se utiliza un contador de iteraciones máximo, para evitar tener un lazo infinito</li>
+                                                        </ul>
+                                                        <img src="./img/ejercicios/punto1.png" class="imgEjercicio">
+                                                        <img src="./img/ejercicios/punto2.png" class="imgEjercicio">
+                                                        <img src="./img/ejercicios/punto3.png" class="imgEjercicio">
+                                                        <img src="./img/ejercicios/punto4.png" class="imgEjercicio">
+                                                        <p>El proceso realizado en la tabla se muestra en la gráfica, para una función que converge</p>
+                                                        <img src="./img/ejercicios/punto5.png" class="imgEjercicio">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingFive">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                            Método de Newton-Rapshon
+                        </button>
+                                        </h2>
+                                        <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <div class="container h-100">
+                                                    <div class="row justify-content-center h-100">
+                                                        <div class="col-sm-10 text-left">
+
+                                                            <p>La ecuación mostrada tiene una raiz en [1,2], ya que f(1)=-5 y f(2)=14. Muestre los resultados parciales del algoritmo de Newton-Raphson con una tolerancia de 0.0001</p>
+                                                            <p><strong>f(x)=x<sup>3</sup>+4x<sup>2</sup>-10=0</strong></p>
+                                                            <h4>Método Analitico</h4>
+                                                            <p>El método requiere obtener la derivada f'(x) de la ecuación para el factor del denominador.</p>
+                                                            <img src="./img/ejercicios/newton1.png" class="imgEjercicio">
+                                                            <p>Para el desarrollo se inicia la búsqueda desde un punto en el intervalo [1,2], por ejemplo el extremo derecho, x<sub>1</sub>=2.</p>
+                                                            <img src="./img/ejercicios/newton2.png" class="imgEjercicio">
+                                                            <img src="./img/ejercicios/newton3.png" class="imgEjercicio">
+                                                            <img src="./img/ejercicios/newton4.png" class="imgEjercicio">
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="flush-headingSix">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                            Método de la Secante
+                        </button>
+                                            </h2>
+                                            <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" data-bs-parent="#accordionFlushExample">
+                                                <div class="accordion-body">
+                                                    <div class="container h-100">
+                                                        <div class="row justify-content-center h-100">
+                                                            <div class="col-sm-10 text-center">
+                                                                <p>La ecuación mostrada tiene una raiz en el intervalo [1,2], ya que f(1) = -5 y f(2) = 14 Muestre los resultados parciales del algoritmo de la secante con una tolerancia de 0.0001</p>
+                                                                <p><strong>x<sup>3</sup>-4x<sup>2</sup>-10=0</strong></p>
+                                                                <img src="./img/ejercicios/secante1.png" class="imgEjercicio">
+                                                                <img src="./img/ejercicios/secante2.png" class="imgEjercicio">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+        </section>
+        <!-- #about -->
+    </main>
+
+    <!--==========================
+    Footer
+  ============================-->
+    <footer id="footer">
+        <div class="footer-top">
+            <div class="container h-100">
+                <div class="row justify-content-center h-100">
+                    <div class="col-sm-6 text-center">
+                        <div class="footer-info">
+                            <h3>Metodos Numericos</h3>
+                            <h4>Raices de ecuaciones</h4>
+                            <p>Este es un proyecto realizado para el curso de <strong>Métodos Numericos</strong> de la <strong>Universidad Nacional de San Agustin</strong> de Arequipa</p>
+                            <div class="social-links">
+                                <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                                <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                                <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+    </footer>
+    <!-- #footer -->
+    <!-- ir hacia arriba de nuevo -->
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+    <!-- Libreria JavaScript -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/jquery/jquery-migrate.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/mobile-nav/mobile-nav.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script src="lib/isotope/isotope.pkgd.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+
+    <!-- Plantilla principal de javascript -->
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

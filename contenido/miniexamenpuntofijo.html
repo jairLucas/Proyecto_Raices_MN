@@ -249,11 +249,10 @@
             </div>
             <nav class="main-nav float-right d-none d-lg-block">
                 <ul>
-                    <li class="active"><a href="./index.html#inicio">Inicio</a></li>
-                    <li><a href="./index.html#about">Teoría</a></li>
-                    <li><a href="./index.html#services">Práctica</a></li>
-                    <li><a href="./index.html#team">Nuestro Equipo</a></li>
-                    <li><a href="./manual.html" class="active">Ayuda</a></li>
+                    <li class="active"><a href="../index.html#inicio">Inicio</a></li>
+                    <li><a href="../index.html#about">Teoría</a></li>
+                    <li><a href="../index.html#services">Práctica</a></li>
+                    <li><a href="../index.html#team">Nuestro Equipo</a></li>
                 </ul>
             </nav>
             <!-- .main-nav -->
@@ -270,18 +269,16 @@
                 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet" />
                 <div class="containerx">
                     <div class="heading">
-                        <h1 class="heading__text">Mini Examen Biseccion</h1>
+                        <h1 class="heading__text">Mini Examen Punto Fijo</h1>
                     </div>
 
 
-
-<ul>
-  <li><a href="./miniexamensecante.html">Mini Examen Secante</a></li>
-  <li><a href="./miniexamenfalsaposicion.html">Mini Examen Falsa Posicion</a></li>
-  <li><a href="./miniexamennewtonrapshon.html">Mini Examen Newton-Rapshon</a></li>
-  <li><a href="./miniexamenpuntofijo.html">Mini Examen Punto Fijo</a></li>
-</ul>
-
+                    <ul>
+                        <li><a href="./miniexamensecante.html">Mini Examen Secante</a></li>
+                        <li><a href="./miniexamen.html">Mini Examen Biseccion</a></li>
+                        <li><a href="./miniexamenfalsaposicion.html">Mini Examen Falsa Posicion</a></li>
+                        <li><a href="./miniexamennewtonrapshon.html">Mini Examen Newton-Rapshon</a></li>
+                    </ul>
                     <!-- Quiz section -->
                     <div class="quiz">
                         <div class="quiz__heading">
@@ -296,108 +293,109 @@
                         <form class="quiz-form">
                             <div class="quiz-form__quiz">
                                 <p class="quiz-form__question">
-                                    <div class="textel">1. ¿Cuál es la definición correcta del teorema de Bolzano?</div>
+                                    <div class="textel">1. El método de iteración del punto fijo converge a la raíz si:</div>
                                 </p>
                                 <label class="quiz-form__ans" for="q11">
           <input type="radio" name="q1" id="q11" value="A" checked />A_
           <span class="design"></span>
-          <span class="text"> Si una función f (x) es continua en un intervalo [a, b] y f (a) · f (b) <0 , entonces existe un valor c ∈ (a, b) para el cual f (c)> 0.</span>
+          <span class="text"> |g (x)|<1 para x en un intervalo [a, b]</span>
         </label>
                                 <label class="quiz-form__ans" for="q12">
           <input type="radio" name="q1" id="q12" value="B" />B_
           <span class="design"></span>
-          <span class="text">Si una función f (x) es continua en un intervalo [a, b] y f (a) · f (b) <0, entonces existe un valor c ∈ (a, b) para el cual f (c) = 0.</span>
+          <span class="text">|g’(x)|<1 para x en un intervalo [a, b]</span>
         </label>
                                 <label class="quiz-form__ans" for="q13">
           <input type="radio" name="q1" id="q13" value="C" />C_
           <span class="design"></span>
-          <span class="text">Si una función f (x) es continua en un intervalo [a, b] y f (b) - f (a) <0, entonces existe un valor c ∈ (a, b) para el cual f (c) = 0.</span>
+          <span class="text">|g (x)|>1 para x en un intervalo [a, b]</span>
         </label>
                                 <label class="quiz-form__ans" for="q14">
           <input type="radio" name="q1" id="q14" value="D" />D_
           <span class="design"></span>
-          <span class="text">Ninguna de las anteriores</span>
+          <span class="text">|g’(x)|>1 para x en un intervalo [a, b]</span>
         </label>
                                 <span class="text" id="resp1"></span>
                             </div>
 
                             <div class="quiz-form__quiz">
                                 <p class="quiz-form__question">
-                                    <div class="textel">2. ¿Qué es la raíz de una función?</div>
+                                    <div class="textel">2. Usar el método de iteración del punto fijo para aproximar la raíz de f(x) = x^2 – 5x - e^x , comenzando con x0 = 0 y hasta que el error porcentual sea menor al 1%.</div>
                                 </p>
                                 <label class="quiz-form__ans" for="q21">
           <input type="radio" name="q2" id="q21" value="A" checked />A_
           <span class="design"></span>
-          <span class="text">Una raíz es el valor por el cual la gráfica de la función se cruza con el origen de los ejes (0, 0).</span>
+          <span class="text">0. 1557461506.</span>
         </label>
                                 <label class="quiz-form__ans" for="q22">
           <input type="radio" name="q2" id="q22" value="B" />B_
           <span class="design"></span>
-          <span class="text">Una raíz es el valor para el que la función es diferente de cero (0).</span>
+          <span class="text"> -0. 1557461506.</span>
         </label>
                                 <label class="quiz-form__ans" for="q23">
           <input type="radio" name="q2" id="q23" value="C" />C_
           <span class="design"></span>
-          <span class="text">A y B son correctas</span>
+          <span class="text">0.2</span>
         </label>
                                 <label class="quiz-form__ans" for="q24">
           <input type="radio" name="q2" id="q24" value="D" />D_
           <span class="design"></span>
-          <span class="text">Una raíz es el valor para el que la función es cero (0).</span>
+          <span class="text">-0.2</span>
         </label>
                                 <span class="text" id="resp2"></span>
                             </div>
 
                             <div class="quiz-form__quiz">
                                 <p class="quiz-form__question">
-                                    <div class="textel">3. ¿Cuál es la fórmula correcta para el número de iteraciones para una tolerancia dada?</div>
+                                    <div class="textel">3. De acuerdo a los siguientes enunciados el mas apropiado es el concepto de EXACTITUD deberá ser:</div>
                                 </p>
                                 <label class="quiz-form__ans" for="q31">
           <input type="radio" name="q3" id="q31" value="A" checked />A_
           <span class="design"></span>
-          <span class="text">n≥log((b−a)/2)/log(ε)</span>
+          <span class="text">Errores debido a la imprecision de los aparatos de medición.</span>
         </label>
                                 <label class="quiz-form__ans" for="q32">
           <input type="radio" name="q3" id="q32" value="B" />B_
           <span class="design"></span>
-          <span class="text">n≥log((b−a)/ε)/log(2)</span>
+          <span class="text">Se refiere a la cercanía de un numero o de una medida al valor verdadero que se supone representa.</span>
         </label>
                                 <label class="quiz-form__ans" for="q33">
           <input type="radio" name="q3" id="q33" value="C" />C_
           <span class="design"></span>
-          <span class="text">n≥log((b+a)/ε)/log(2)</span>
+          <span class="text">Errores debido a la apreciación del observador y otras causas.</span>
         </label>
                                 <label class="quiz-form__ans" for="q34">
           <input type="radio" name="q3" id="q34" value="D" />D_
           <span class="design"></span>
-          <span class="text">Ninguna de las anteriores</span>
+          <span class="text">Son errores en los valores numéricos con que se va a operar, puede deberse a dos causas : sistemáticas o accidentales.</span>
         </label>
                                 <span class="text" id="resp3"></span>
                             </div>
 
                             <div class="quiz-form__quiz">
                                 <p class="quiz-form__question">
-                                    <div class="textel">4. ¿Cómo se calcula el punto medio en el método de bisección?</div>
+                                    <div class="textel">4. uno de los métodos mas interesantes del análisis numérico y particularmente útil ya que nos permite encontrar la solución de un sistema "n" incógnitas, donde primero despejamos la variable x1, y las demás variables
+                                        se igualan a cero, Nos referimos a:</div>
                                 </p>
                                 <label class="quiz-form__ans" for="q41">
           <input type="radio" name="q4" id="q41" value="A" checked />A_
           <span class="design"></span>
-          <span class="text">c = (a+b)/2</span>
+          <span class="text">El método de punto fijo para localizar raíces.</span>
         </label>
                                 <label class="quiz-form__ans" for="q42">
           <input type="radio" name="q4" id="q42" value="B" />B_
           <span class="design"></span>
-          <span class="text">c = (a·b)/2</span>
+          <span class="text">El método de Gauss - Jordan para localizar raíces.</span>
         </label>
                                 <label class="quiz-form__ans" for="q43">
           <input type="radio" name="q4" id="q43" value="C" />C_
           <span class="design"></span>
-          <span class="text">c=(a-b)/2</span>
+          <span class="text">El método de Gauss - Seidel para localizar raíces.</span>
         </label>
                                 <label class="quiz-form__ans" for="q44">
           <input type="radio" name="q4" id="q44" value="D" />D_
           <span class="design"></span>
-          <span class="text">Niguna de las anteriores</span>
+          <span class="text">El metodo de Newton - Raphson  para localizar raices.</span>
         </label>
                                 <span id="texto-result" style="color:magenta; opacity: 0;"></span>
                                 <span class="text" id="resp4"></span>
@@ -405,27 +403,28 @@
 
                             <div class="quiz-form__quiz">
                                 <p class="quiz-form__question">
-                                    <div class="textel">5. ¿Qué es una función continua?</div>
+                                    <div class="textel">5. Estos problemas se estudian en los métodos numericos y se relacionan con el valor de una variable o de un parámetro que satisface una ecuación no lineal. Son especialemnte valiosos en proyectos de ingenieria, donde
+                                        con frecuencia resulta imposible despejar de manera analítica a los parámetros de las ecuaciones de diseño.</div>
                                 </p>
                                 <label class="quiz-form__ans" for="q51">
           <input type="radio" name="q5" id="q51" value="A" checked />A_
           <span class="design"></span>
-          <span class="text">Una función que se traza en líneas rectas.</span>
+          <span class="text">Optimización.</span>
         </label>
                                 <label class="quiz-form__ans" for="q52">
           <input type="radio" name="q5" id="q52" value="B" />B_
           <span class="design"></span>
-          <span class="text">Una función que para pequeños cambios en el argumento genera también pequeños cambios en el resultado.</span>
+          <span class="text">Raices de ecuaciones</span>
         </label>
                                 <label class="quiz-form__ans" for="q53">
           <input type="radio" name="q5" id="q53" value="C" />C_
           <span class="design"></span>
-          <span class="text">Una función que para pequeños cambios en el argumento genera grandes cambios en el resultado</span>
+          <span class="text">Integración</span>
         </label>
                                 <label class="quiz-form__ans" for="q54">
           <input type="radio" name="q5" id="q54" value="D" />D_
           <span class="design"></span>
-          <span class="text">Niguna de las anteriores</span>
+          <span class="text">Ajuste de curvas.</span>
         </label>
                                 <span class="text" id="resp5"></span>
                             </div>
