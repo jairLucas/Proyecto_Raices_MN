@@ -1,0 +1,5 @@
+
+Para probar la aplicacion ejecute el archivo index.html con su navegador web favorito.
+
+Requisitos:
+El naegador web debe contar con soporte a javaScript para que pueda funcionar correctamente
